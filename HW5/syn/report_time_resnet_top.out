@@ -1,0 +1,68 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : resnet_top
+Version: O-2018.06
+Date   : Wed Dec 16 21:14:53 2020
+****************************************
+
+Operating Conditions: PVT_1P08V_125C   Library: slow_vdd1v2
+Wire Load Model Mode: enclosed
+
+  Startpoint: mult_a1_8_reg_1_
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: conv_a1_reg_reg_14_
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  resnet_top         Large                 slow_vdd1v2
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                  0.0000     0.0000
+  clock network delay (ideal)            0.0000     0.0000
+  mult_a1_8_reg_1_/CK (DFFQXL)           0.0000     0.0000 r
+  mult_a1_8_reg_1_/Q (DFFQXL)            0.1011     0.1011 r
+  U2196/CO (ADDFXL)                      0.2224     0.3235 r
+  U3731/Y (XNOR3XL)                      0.2179     0.5414 r
+  U3433/Y (XOR3XL)                       0.2152     0.7565 r
+  U5040/Y (INVXL)                        0.0485     0.8051 f
+  U2188/Y (OAI2BB2XL)                    0.0689     0.8739 r
+  U3430/Y (OAI2BB1X1)                    0.1156     0.9895 r
+  U8278/Y (AOI22XL)                      0.0682     1.0577 f
+  U5313/Y (OAI22XL)                      0.0913     1.1490 r
+  U3091/Y (XOR2XL)                       0.1474     1.2965 f
+  U3471/Y (OR2XL)                        0.0713     1.3677 f
+  U3401/Y (AOI22XL)                      0.0729     1.4406 r
+  U3470/Y (OR2XL)                        0.0687     1.5093 r
+  U8286/Y (NAND2XL)                      0.0665     1.5758 f
+  U3261/Y (OAI2BB1XL)                    0.0796     1.6553 f
+  U5282/Y (AO21XL)                       0.0913     1.7466 f
+  U5441/Y (OAI2BB1X1)                    0.0713     1.8179 f
+  U5141/Y (NAND2XL)                      0.0461     1.8640 r
+  U3476/Y (NAND2BXL)                     0.0692     1.9332 f
+  U3472/Y (AOI22XL)                      0.0666     1.9998 r
+  U3276/Y (XOR2XL)                       0.1331     2.1329 f
+  U5359/Y (OAI21XL)                      0.0617     2.1946 r
+  conv_a1_reg_reg_14_/D (DFFQXL)         0.0310     2.2256 r
+  data arrival time                                 2.2256
+
+  clock clk (rise edge)                  2.2940     2.2940
+  clock network delay (ideal)            0.0000     2.2940
+  conv_a1_reg_reg_14_/CK (DFFQXL)        0.0000     2.2940 r
+  library setup time                    -0.0682     2.2258
+  data required time                                2.2258
+  -----------------------------------------------------------
+  data required time                                2.2258
+  data arrival time                                -2.2256
+  -----------------------------------------------------------
+  slack (MET)                                       0.0001
+
+
+1

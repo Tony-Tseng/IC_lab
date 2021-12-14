@@ -1,0 +1,44 @@
+ 
+****************************************
+Report : area
+Design : resnet_top
+Version: O-2018.06
+Date   : Wed Dec 16 21:14:53 2020
+****************************************
+
+Library(s) Used:
+
+    slow_vdd1v2 (File: /usr/cadtool/GPDK45/gsclib045_svt_v4.4/gsclib045/db/slow_vdd1v2_basicCells_wl.db)
+
+Number of ports:                          993
+Number of nets:                          9856
+Number of cells:                         9135
+Number of combinational cells:           8152
+Number of sequential cells:               982
+Number of macros/black boxes:               0
+Number of buf/inv:                       1539
+Number of references:                      88
+
+Combinational area:              14662.224327
+Buf/Inv area:                     1204.524027
+Noncombinational area:            5408.730121
+Macro/Black Box area:                0.000000
+Net Interconnect area:               0.000000
+
+Total cell area:                 20070.954448
+Total area:                      20070.954448
+
+Hierarchical area distribution
+------------------------------
+
+                                  Global cell area            Local cell area
+                                  -------------------  ----------------------------- 
+Hierarchical cell                 Absolute    Percent  Combi-      Noncombi-  Black-
+                                  Total       Total    national    national   boxes   Design
+--------------------------------  ----------  -------  ----------  ---------  ------  -------------------------------
+resnet_top                        20070.9544    100.0  14660.8563  5403.2581  0.0000  resnet_top
+clk_gate_read_input_cnt_reg           6.8400      0.0      1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_resnet_top
+--------------------------------  ----------  -------  ----------  ---------  ------  -------------------------------
+Total                                                  14662.2243  5408.7301  0.0000
+
+1

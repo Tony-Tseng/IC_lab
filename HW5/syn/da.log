@@ -1,0 +1,1321 @@
+
+                           Design Compiler Graphical 
+                                 DC Ultra (TM)
+                                  DFTMAX (TM)
+                              Power Compiler (TM)
+                                 DesignWare (R)
+                                 DC Expert (TM)
+                               Design Vision (TM)
+                               HDL Compiler (TM)
+                               VHDL Compiler (TM)
+                                  DFT Compiler
+                               Design Compiler(R)
+
+                 Version O-2018.06 for linux64 - May 21, 2018 
+
+                    Copyright (c) 1988 - 2018 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+            or distribution of this software is strictly prohibited.
+Initializing...
+# set your TOPLEVEL here
+set TOPLEVEL "resnet_top"
+resnet_top
+# change your timing constraint here
+# 4*0.8=3.2 (20% timing margin for 250MHz clock)
+set TEST_CYCLE 2.294
+2.294
+source -echo -verbose 0_readfile.tcl 
+set TOP_DIR $TOPLEVEL
+resnet_top
+set RPT_DIR report
+report
+set NET_DIR netlist
+netlist
+sh rm -rf ./$TOP_DIR
+sh rm -rf ./$RPT_DIR
+sh rm -rf ./$NET_DIR
+sh mkdir ./$TOP_DIR
+sh mkdir ./$RPT_DIR
+sh mkdir ./$NET_DIR
+# define a lib path here
+define_design_lib $TOPLEVEL -path ./$TOPLEVEL
+1
+# Read Design File (add your files here)
+set HDL_DIR "../hdl"
+../hdl
+analyze -library $TOPLEVEL -format verilog "../hdl/resnet_top_final.v                                            "
+Running PRESTO HDLC
+Compiling source file ../hdl/resnet_top_final.v
+Presto compilation completed successfully.
+Loading db file '/usr/cadtool/GPDK45/gsclib045_svt_v4.4/gsclib045/db/slow_vdd1v2_basicCells_wl.db'
+Loading db file '/usr/cad/synopsys/synthesis/cur/libraries/syn/dw_foundation.sldb'
+1
+# elaborate your design
+elaborate $TOPLEVEL -architecture verilog -library $TOPLEVEL
+Loading db file '/usr/cad/synopsys/synthesis/cur/libraries/syn/gtech.db'
+Loading db file '/usr/cad/synopsys/synthesis/cur/libraries/syn/standard.sldb'
+  Loading link library 'slow_vdd1v2'
+  Loading link library 'gtech'
+Running PRESTO HDLC
+Warning:  ../hdl/resnet_top_final.v:532: signed to unsigned part selection occurs. (VER-318)
+Warning:  ../hdl/resnet_top_final.v:533: signed to unsigned part selection occurs. (VER-318)
+Warning:  ../hdl/resnet_top_final.v:534: signed to unsigned part selection occurs. (VER-318)
+Warning:  ../hdl/resnet_top_final.v:535: signed to unsigned part selection occurs. (VER-318)
+Warning:  ../hdl/resnet_top_final.v:536: signed to unsigned part selection occurs. (VER-318)
+Warning:  ../hdl/resnet_top_final.v:537: signed to unsigned part selection occurs. (VER-318)
+Warning:  ../hdl/resnet_top_final.v:538: signed to unsigned part selection occurs. (VER-318)
+Warning:  ../hdl/resnet_top_final.v:539: signed to unsigned part selection occurs. (VER-318)
+Warning:  ../hdl/resnet_top_final.v:546: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/resnet_top_final.v:550: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/resnet_top_final.v:554: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/resnet_top_final.v:558: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../hdl/resnet_top_final.v:680: unsigned to signed assignment occurs. (VER-318)
+Warning:  ../hdl/resnet_top_final.v:681: unsigned to signed assignment occurs. (VER-318)
+Warning:  ../hdl/resnet_top_final.v:682: unsigned to signed assignment occurs. (VER-318)
+Warning:  ../hdl/resnet_top_final.v:683: unsigned to signed assignment occurs. (VER-318)
+Warning:  ../hdl/resnet_top_final.v:684: unsigned to signed assignment occurs. (VER-318)
+Warning:  ../hdl/resnet_top_final.v:685: unsigned to signed assignment occurs. (VER-318)
+Warning:  ../hdl/resnet_top_final.v:686: unsigned to signed assignment occurs. (VER-318)
+Warning:  ../hdl/resnet_top_final.v:687: unsigned to signed assignment occurs. (VER-318)
+Warning:  ../hdl/resnet_top_final.v:688: unsigned to signed assignment occurs. (VER-318)
+Warning:  ../hdl/resnet_top_final.v:722: signed to unsigned part selection occurs. (VER-318)
+Warning:  ../hdl/resnet_top_final.v:723: signed to unsigned part selection occurs. (VER-318)
+Warning:  ../hdl/resnet_top_final.v:724: signed to unsigned part selection occurs. (VER-318)
+Warning:  ../hdl/resnet_top_final.v:725: signed to unsigned part selection occurs. (VER-318)
+Warning:  ../hdl/resnet_top_final.v:726: signed to unsigned part selection occurs. (VER-318)
+Warning:  ../hdl/resnet_top_final.v:727: signed to unsigned part selection occurs. (VER-318)
+Warning:  ../hdl/resnet_top_final.v:728: signed to unsigned part selection occurs. (VER-318)
+Warning:  ../hdl/resnet_top_final.v:729: signed to unsigned part selection occurs. (VER-318)
+Warning:  ../hdl/resnet_top_final.v:730: signed to unsigned part selection occurs. (VER-318)
+Warning:  ../hdl/resnet_top_final.v:731: signed to unsigned part selection occurs. (VER-318)
+Warning:  ../hdl/resnet_top_final.v:732: signed to unsigned part selection occurs. (VER-318)
+Warning:  ../hdl/resnet_top_final.v:733: signed to unsigned part selection occurs. (VER-318)
+Warning:  ../hdl/resnet_top_final.v:734: signed to unsigned part selection occurs. (VER-318)
+Warning:  ../hdl/resnet_top_final.v:735: signed to unsigned part selection occurs. (VER-318)
+Warning:  ../hdl/resnet_top_final.v:736: signed to unsigned part selection occurs. (VER-318)
+Warning:  ../hdl/resnet_top_final.v:737: signed to unsigned part selection occurs. (VER-318)
+Warning:  ../hdl/resnet_top_final.v:738: signed to unsigned part selection occurs. (VER-318)
+Warning:  ../hdl/resnet_top_final.v:739: signed to unsigned part selection occurs. (VER-318)
+Warning:  ../hdl/resnet_top_final.v:743: unsigned to signed assignment occurs. (VER-318)
+Warning:  ../hdl/resnet_top_final.v:744: unsigned to signed assignment occurs. (VER-318)
+Warning:  ../hdl/resnet_top_final.v:745: unsigned to signed assignment occurs. (VER-318)
+Warning:  ../hdl/resnet_top_final.v:746: unsigned to signed assignment occurs. (VER-318)
+Warning:  ../hdl/resnet_top_final.v:747: unsigned to signed assignment occurs. (VER-318)
+Warning:  ../hdl/resnet_top_final.v:748: unsigned to signed assignment occurs. (VER-318)
+Warning:  ../hdl/resnet_top_final.v:749: unsigned to signed assignment occurs. (VER-318)
+Warning:  ../hdl/resnet_top_final.v:750: unsigned to signed assignment occurs. (VER-318)
+Warning:  ../hdl/resnet_top_final.v:751: unsigned to signed assignment occurs. (VER-318)
+Warning:  ../hdl/resnet_top_final.v:753: unsigned to signed assignment occurs. (VER-318)
+Warning:  ../hdl/resnet_top_final.v:754: unsigned to signed assignment occurs. (VER-318)
+Warning:  ../hdl/resnet_top_final.v:755: unsigned to signed assignment occurs. (VER-318)
+Warning:  ../hdl/resnet_top_final.v:756: unsigned to signed assignment occurs. (VER-318)
+Warning:  ../hdl/resnet_top_final.v:757: unsigned to signed assignment occurs. (VER-318)
+Warning:  ../hdl/resnet_top_final.v:758: unsigned to signed assignment occurs. (VER-318)
+Warning:  ../hdl/resnet_top_final.v:759: unsigned to signed assignment occurs. (VER-318)
+Warning:  ../hdl/resnet_top_final.v:760: unsigned to signed assignment occurs. (VER-318)
+Warning:  ../hdl/resnet_top_final.v:761: unsigned to signed assignment occurs. (VER-318)
+Warning:  ../hdl/resnet_top_final.v:763: unsigned to signed assignment occurs. (VER-318)
+Warning:  ../hdl/resnet_top_final.v:764: unsigned to signed assignment occurs. (VER-318)
+Warning:  ../hdl/resnet_top_final.v:765: unsigned to signed assignment occurs. (VER-318)
+Warning:  ../hdl/resnet_top_final.v:766: unsigned to signed assignment occurs. (VER-318)
+Warning:  ../hdl/resnet_top_final.v:767: unsigned to signed assignment occurs. (VER-318)
+Warning:  ../hdl/resnet_top_final.v:768: unsigned to signed assignment occurs. (VER-318)
+Warning:  ../hdl/resnet_top_final.v:769: unsigned to signed assignment occurs. (VER-318)
+Warning:  ../hdl/resnet_top_final.v:770: unsigned to signed assignment occurs. (VER-318)
+Warning:  ../hdl/resnet_top_final.v:771: unsigned to signed assignment occurs. (VER-318)
+Warning:  ../hdl/resnet_top_final.v:773: unsigned to signed assignment occurs. (VER-318)
+Warning:  ../hdl/resnet_top_final.v:774: unsigned to signed assignment occurs. (VER-318)
+Warning:  ../hdl/resnet_top_final.v:775: unsigned to signed assignment occurs. (VER-318)
+Warning:  ../hdl/resnet_top_final.v:776: unsigned to signed assignment occurs. (VER-318)
+Warning:  ../hdl/resnet_top_final.v:777: unsigned to signed assignment occurs. (VER-318)
+Warning:  ../hdl/resnet_top_final.v:778: unsigned to signed assignment occurs. (VER-318)
+Warning:  ../hdl/resnet_top_final.v:779: unsigned to signed assignment occurs. (VER-318)
+Warning:  ../hdl/resnet_top_final.v:780: unsigned to signed assignment occurs. (VER-318)
+Warning:  ../hdl/resnet_top_final.v:781: unsigned to signed assignment occurs. (VER-318)
+Warning:  ../hdl/resnet_top_final.v:974: signed to unsigned part selection occurs. (VER-318)
+Warning:  ../hdl/resnet_top_final.v:975: signed to unsigned part selection occurs. (VER-318)
+Warning:  ../hdl/resnet_top_final.v:976: signed to unsigned part selection occurs. (VER-318)
+Warning:  ../hdl/resnet_top_final.v:977: signed to unsigned part selection occurs. (VER-318)
+Warning:  ../hdl/resnet_top_final.v:980: signed to unsigned part selection occurs. (VER-318)
+Warning:  ../hdl/resnet_top_final.v:981: signed to unsigned part selection occurs. (VER-318)
+Warning:  ../hdl/resnet_top_final.v:982: signed to unsigned part selection occurs. (VER-318)
+Warning:  ../hdl/resnet_top_final.v:983: signed to unsigned part selection occurs. (VER-318)
+Warning:  ../hdl/resnet_top_final.v:986: signed to unsigned part selection occurs. (VER-318)
+Warning:  ../hdl/resnet_top_final.v:987: signed to unsigned part selection occurs. (VER-318)
+Warning:  ../hdl/resnet_top_final.v:988: signed to unsigned part selection occurs. (VER-318)
+Warning:  ../hdl/resnet_top_final.v:989: signed to unsigned part selection occurs. (VER-318)
+Warning:  ../hdl/resnet_top_final.v:992: signed to unsigned part selection occurs. (VER-318)
+Warning:  ../hdl/resnet_top_final.v:993: signed to unsigned part selection occurs. (VER-318)
+Warning:  ../hdl/resnet_top_final.v:994: signed to unsigned part selection occurs. (VER-318)
+Warning:  ../hdl/resnet_top_final.v:995: signed to unsigned part selection occurs. (VER-318)
+Warning:  ../hdl/resnet_top_final.v:998: signed to unsigned part selection occurs. (VER-318)
+Warning:  ../hdl/resnet_top_final.v:999: signed to unsigned part selection occurs. (VER-318)
+Warning:  ../hdl/resnet_top_final.v:1000: signed to unsigned part selection occurs. (VER-318)
+Warning:  ../hdl/resnet_top_final.v:1001: signed to unsigned part selection occurs. (VER-318)
+Warning:  ../hdl/resnet_top_final.v:1126: unsigned to signed assignment occurs. (VER-318)
+
+Statistics for case statements in always block at line 159 in file
+	'../hdl/resnet_top_final.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           160            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 192 in file
+	'../hdl/resnet_top_final.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           193            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 358 in file
+	'../hdl/resnet_top_final.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           360            |    auto/auto     |
+|           436            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 568 in file
+	'../hdl/resnet_top_final.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           569            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 971 in file
+	'../hdl/resnet_top_final.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           972            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 1031 in file
+	'../hdl/resnet_top_final.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           1060           |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine resnet_top line 333 in file
+		'../hdl/resnet_top_final.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      flag_reg       | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine resnet_top line 542 in file
+		'../hdl/resnet_top_final.v'.
+===========================================================================
+|    Register Name    | Type  | Width | Bus | MB | AR | AS | SR | SS | ST |
+===========================================================================
+|     c2_tmp_reg      | Latch |   8   |  Y  | N  | N  | N  | -  | -  | -  |
+|     c1_tmp_reg      | Latch |   8   |  Y  | N  | N  | N  | -  | -  | -  |
+|     c0_tmp_reg      | Latch |   8   |  Y  | N  | N  | N  | -  | -  | -  |
+|     c3_tmp_reg      | Latch |   8   |  Y  | N  | N  | N  | -  | -  | -  |
+===========================================================================
+
+Inferred memory devices in process
+	in routine resnet_top line 652 in file
+		'../hdl/resnet_top_final.v'.
+==================================================================================
+|     Register Name      |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+==================================================================================
+| sram_bytemask_n_c0_reg | Flip-flop |   4   |  Y  | N  | N  | N  | N  | N  | N  |
+| sram_bytemask_n_c1_reg | Flip-flop |   4   |  Y  | N  | N  | N  | N  | N  | N  |
+| sram_bytemask_n_c2_reg | Flip-flop |   4   |  Y  | N  | N  | N  | N  | N  | N  |
+| sram_bytemask_n_c3_reg | Flip-flop |   4   |  Y  | N  | N  | N  | N  | N  | N  |
+|   sram_wdata_c0_reg    | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|   sram_wdata_c1_reg    | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|   sram_wdata_c2_reg    | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|   sram_wdata_c3_reg    | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|    sram_addr_c0_reg    | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|    sram_addr_c1_reg    | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|    sram_addr_c2_reg    | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|    sram_addr_c3_reg    | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|    sram_wen_c0_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|    sram_wen_c1_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|    sram_wen_c2_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|    sram_wen_c3_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+| sram_rdata_b0_reg_reg  | Flip-flop |  28   |  Y  | N  | N  | N  | N  | N  | N  |
+| sram_rdata_b1_reg_reg  | Flip-flop |  28   |  Y  | N  | N  | N  | N  | N  | N  |
+| sram_rdata_b2_reg_reg  | Flip-flop |  28   |  Y  | N  | N  | N  | N  | N  | N  |
+| sram_rdata_b3_reg_reg  | Flip-flop |  28   |  Y  | N  | N  | N  | N  | N  | N  |
+==================================================================================
+
+Inferred memory devices in process
+	in routine resnet_top line 885 in file
+		'../hdl/resnet_top_final.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    mult_a0_0_reg    | Flip-flop |  11   |  Y  | N  | N  | N  | N  | N  | N  |
+|    mult_a1_0_reg    | Flip-flop |  11   |  Y  | N  | N  | N  | N  | N  | N  |
+|    mult_a2_0_reg    | Flip-flop |  11   |  Y  | N  | N  | N  | N  | N  | N  |
+|    mult_a3_0_reg    | Flip-flop |  11   |  Y  | N  | N  | N  | N  | N  | N  |
+|    mult_a0_1_reg    | Flip-flop |  11   |  Y  | N  | N  | N  | N  | N  | N  |
+|    mult_a1_1_reg    | Flip-flop |  11   |  Y  | N  | N  | N  | N  | N  | N  |
+|    mult_a2_1_reg    | Flip-flop |  11   |  Y  | N  | N  | N  | N  | N  | N  |
+|    mult_a3_1_reg    | Flip-flop |  11   |  Y  | N  | N  | N  | N  | N  | N  |
+|    mult_a0_2_reg    | Flip-flop |  11   |  Y  | N  | N  | N  | N  | N  | N  |
+|    mult_a1_2_reg    | Flip-flop |  11   |  Y  | N  | N  | N  | N  | N  | N  |
+|    mult_a2_2_reg    | Flip-flop |  11   |  Y  | N  | N  | N  | N  | N  | N  |
+|    mult_a3_2_reg    | Flip-flop |  11   |  Y  | N  | N  | N  | N  | N  | N  |
+|    mult_a0_3_reg    | Flip-flop |  11   |  Y  | N  | N  | N  | N  | N  | N  |
+|    mult_a1_3_reg    | Flip-flop |  11   |  Y  | N  | N  | N  | N  | N  | N  |
+|    mult_a2_3_reg    | Flip-flop |  11   |  Y  | N  | N  | N  | N  | N  | N  |
+|    mult_a3_3_reg    | Flip-flop |  11   |  Y  | N  | N  | N  | N  | N  | N  |
+|    mult_a0_4_reg    | Flip-flop |  11   |  Y  | N  | N  | N  | N  | N  | N  |
+|    mult_a1_4_reg    | Flip-flop |  11   |  Y  | N  | N  | N  | N  | N  | N  |
+|    mult_a2_4_reg    | Flip-flop |  11   |  Y  | N  | N  | N  | N  | N  | N  |
+|    mult_a3_4_reg    | Flip-flop |  11   |  Y  | N  | N  | N  | N  | N  | N  |
+|    mult_a0_5_reg    | Flip-flop |  11   |  Y  | N  | N  | N  | N  | N  | N  |
+|    mult_a1_5_reg    | Flip-flop |  11   |  Y  | N  | N  | N  | N  | N  | N  |
+|    mult_a2_5_reg    | Flip-flop |  11   |  Y  | N  | N  | N  | N  | N  | N  |
+|    mult_a3_5_reg    | Flip-flop |  11   |  Y  | N  | N  | N  | N  | N  | N  |
+|    mult_a0_6_reg    | Flip-flop |  11   |  Y  | N  | N  | N  | N  | N  | N  |
+|    mult_a1_6_reg    | Flip-flop |  11   |  Y  | N  | N  | N  | N  | N  | N  |
+|    mult_a2_6_reg    | Flip-flop |  11   |  Y  | N  | N  | N  | N  | N  | N  |
+|    mult_a3_6_reg    | Flip-flop |  11   |  Y  | N  | N  | N  | N  | N  | N  |
+|    mult_a0_7_reg    | Flip-flop |  11   |  Y  | N  | N  | N  | N  | N  | N  |
+|    mult_a1_7_reg    | Flip-flop |  11   |  Y  | N  | N  | N  | N  | N  | N  |
+|    mult_a2_7_reg    | Flip-flop |  11   |  Y  | N  | N  | N  | N  | N  | N  |
+|    mult_a3_7_reg    | Flip-flop |  11   |  Y  | N  | N  | N  | N  | N  | N  |
+|    mult_a0_8_reg    | Flip-flop |  11   |  Y  | N  | N  | N  | N  | N  | N  |
+|    mult_a1_8_reg    | Flip-flop |  11   |  Y  | N  | N  | N  | N  | N  | N  |
+|    mult_a2_8_reg    | Flip-flop |  11   |  Y  | N  | N  | N  | N  | N  | N  |
+|    mult_a3_8_reg    | Flip-flop |  11   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine resnet_top line 1102 in file
+		'../hdl/resnet_top_final.v'.
+=====================================================================================
+|       Register Name       |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+=====================================================================================
+|  sram_bytemask_n_b0_reg   | Flip-flop |   4   |  Y  | N  | N  | N  | N  | N  | N  |
+|  sram_bytemask_n_b1_reg   | Flip-flop |   4   |  Y  | N  | N  | N  | N  | N  | N  |
+|  sram_bytemask_n_b2_reg   | Flip-flop |   4   |  Y  | N  | N  | N  | N  | N  | N  |
+|  sram_bytemask_n_b3_reg   | Flip-flop |   4   |  Y  | N  | N  | N  | N  | N  | N  |
+|     sram_wdata_b0_reg     | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|     sram_wdata_b1_reg     | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|     sram_wdata_b2_reg     | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|     sram_wdata_b3_reg     | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|      sram_wen_b0_reg      | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|      sram_wen_b1_reg      | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|      sram_wen_b2_reg      | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|      sram_wen_b3_reg      | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     sram_addr_b0_reg      | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|     sram_addr_b1_reg      | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|     sram_addr_b2_reg      | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|     sram_addr_b3_reg      | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|   sram_rdata_a0_reg_reg   | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|   sram_rdata_a1_reg_reg   | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|   sram_rdata_a2_reg_reg   | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|   sram_rdata_a3_reg_reg   | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|   sram_raddr_weight_reg   | Flip-flop |   7   |  Y  | N  | N  | N  | N  | N  | N  |
+|    sram_raddr_bias_reg    | Flip-flop |   5   |  Y  | N  | N  | N  | N  | N  | N  |
+| sram_rdata_weight_reg_reg | Flip-flop |  36   |  Y  | N  | N  | N  | N  | N  | N  |
+|  sram_rdata_bias_reg_reg  | Flip-flop |   4   |  Y  | N  | N  | N  | N  | N  | N  |
+|      channel_cnt_reg      | Flip-flop |   5   |  Y  | N  | N  | N  | N  | N  | N  |
+|       conv_cnt_reg        | Flip-flop |   2   |  Y  | N  | N  | N  | N  | N  | N  |
+|      conv_a0_reg_reg      | Flip-flop |  15   |  Y  | N  | N  | N  | N  | N  | N  |
+|      conv_a1_reg_reg      | Flip-flop |  15   |  Y  | N  | N  | N  | N  | N  | N  |
+|      conv_a2_reg_reg      | Flip-flop |  15   |  Y  | N  | N  | N  | N  | N  | N  |
+|      conv_a3_reg_reg      | Flip-flop |  15   |  Y  | N  | N  | N  | N  | N  | N  |
+=====================================================================================
+
+Inferred memory devices in process
+	in routine resnet_top line 1265 in file
+		'../hdl/resnet_top_final.v'.
+==================================================================================
+|     Register Name      |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+==================================================================================
+|   read_input_cnt_reg   | Flip-flop |  11   |  Y  | N  | N  | N  | N  | N  | N  |
+|  start_pulse_reg_reg   | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|        busy_reg        | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|   input_data_reg_reg   | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|    finish_pulse_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+| sram_bytemask_n_a0_reg | Flip-flop |   4   |  Y  | N  | N  | N  | N  | N  | N  |
+| sram_bytemask_n_a1_reg | Flip-flop |   4   |  Y  | N  | N  | N  | N  | N  | N  |
+| sram_bytemask_n_a2_reg | Flip-flop |   4   |  Y  | N  | N  | N  | N  | N  | N  |
+| sram_bytemask_n_a3_reg | Flip-flop |   4   |  Y  | N  | N  | N  | N  | N  | N  |
+|   sram_wdata_a0_reg    | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|   sram_wdata_a1_reg    | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|   sram_wdata_a2_reg    | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|   sram_wdata_a3_reg    | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|    sram_addr_a0_reg    | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|    sram_addr_a1_reg    | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|    sram_addr_a2_reg    | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|    sram_addr_a3_reg    | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|    sram_wen_a0_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|    sram_wen_a1_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|    sram_wen_a2_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|    sram_wen_a3_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+==================================================================================
+
+Inferred memory devices in process
+	in routine resnet_top line 1291 in file
+		'../hdl/resnet_top_final.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      state_reg      | Flip-flop |   5   |  Y  | N  | N  | N  | Y  | N  | N  |
+|    busy_cnt_reg     | Flip-flop |   7   |  Y  | N  | N  | N  | Y  | N  | N  |
+===============================================================================
+Information:  Complex logic will not be considered for set/reset inference. (ELAB-2008)
+Presto compilation completed successfully.
+Elaborated 1 design.
+Current design is now 'resnet_top'.
+1
+# Solve Multiple Instance
+set uniquify_naming_style "%s_mydesign_%d"
+%s_mydesign_%d
+uniquify
+1
+# link the design
+current_design $TOPLEVEL
+Current design is 'resnet_top'.
+{resnet_top}
+link
+
+  Linking design 'resnet_top'
+  Using the following designs and libraries:
+  --------------------------------------------------------------------------
+  resnet_top                  /home/u106/u106061101/ICLAB/HW5/PART3/syn_7142/resnet_top.db
+  slow_vdd1v2 (library)       /usr/cadtool/GPDK45/gsclib045_svt_v4.4/gsclib045/db/slow_vdd1v2_basicCells_wl.db
+  dw_foundation.sldb (library) /usr/cad/synopsys/synthesis/cur/libraries/syn/dw_foundation.sldb
+
+1
+1
+source -echo -verbose 1_setting.tcl 
+# Setting Design and I/O Environment
+set_operating_conditions -library slow_vdd1v2 PVT_1P08V_125C
+Using operating conditions 'PVT_1P08V_125C' found in library 'slow_vdd1v2'.
+1
+# Assume outputs go to DFF and inputs also come from DFF
+set_driving_cell -library slow_vdd1v2 -lib_cell DFFHQX1 -pin {Q} [all_inputs]	
+1
+set_load [load_of "slow_vdd1v2/DFFHQX1/D"] [all_outputs]
+1
+# Setting wireload model
+set_wire_load_mode enclosed
+1
+set_wire_load_model -name "Large" $TOPLEVEL
+1
+# Setting Timing Constraints
+###  ceate your clock here
+create_clock -name clk -period $TEST_CYCLE  [get_ports clk]
+1
+###  set clock constrain
+set_ideal_network       [get_ports clk]
+1
+set_dont_touch_network  [all_clocks]
+1
+# I/O delay should depend on the real enironment. Here only shows an example of setting
+set_input_delay  [expr $TEST_CYCLE*0.8] -clock clk [remove_from_collection [all_inputs] [get_ports clk]]
+1
+set_output_delay [expr $TEST_CYCLE*0.8] -clock clk [all_outputs]
+1
+# Setting DRC Constraint
+# Defensive setting: default fanout_load 1.0 and our target max fanout # 20 => 1.0*20 = 20.0
+# max_transition and max_capacitance are given in the cell library
+set_max_fanout 20.0 $TOPLEVEL
+1
+# Area Constraint
+set_max_area   0
+1
+1
+source -echo -verbose 2_compile.tcl 
+# this cell's verilog will cause ncverilog to hang 
+# before synthesis settings
+set case_analysis_with_logic_constants true
+true
+set_fix_multiple_port_nets -feedthroughs -outputs -constants -buffer_constants
+1
+####check design####
+check_design > ./$RPT_DIR/check_design.log
+check_timing > ./$RPT_DIR/check_timing.log
+set_clock_gating_style -max_fanout 10
+
+Current clock gating style....
+Sequential cell: latch
+Minimum bank bitwidth: 3
+Minimum bank bitwidth for enhanced clock gating: 6
+Maximum fanout: 10
+Setup time for clock gate: 0.000000
+Hold time for clock gate: 0.000000
+Clock gating circuitry (positive edge): and
+Clock gating circuitry (negative edge): or
+ Note: inverter between clock gating circuitry 
+       and (negative edge) register clock pin.
+Control point insertion: none
+Control signal for control point: scan_enable
+Observation point insertion: false
+Observation logic depth: 5
+1
+# Synthesis all design (using : compile_ultra)
+# you can add "-gate_clock" to do gated-clock
+# you can add "-incremental" for higher performance
+compile_ultra -gate_clock -exact_map -no_autoungroup -no_seq_output_inversion -no_boundary_optimization
+Warning: The value of variable 'compile_preserve_subdesign_interfaces' has been changed to true because '-no_boundary_optimization' is used. (OPT-133)
+Information: Starting from 2013.12 release, constant propagation is enabled even when boundary optimization is disabled. (OPT-1318)
+Information: Performing power optimization. (PWR-850)
+Alib files are up-to-date.
+Information: Evaluating DesignWare library utilization. (UISN-27)
+
+============================================================================
+| DesignWare Building Block Library  |         Version         | Available |
+============================================================================
+| Basic DW Building Blocks           | O-2018.06-DWBB_201806.0 |     *     |
+| Licensed DW Building Blocks        | O-2018.06-DWBB_201806.0 |     *     |
+============================================================================
+
+
+Information: There are 264 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+  Simplifying Design 'resnet_top'
+
+Loaded alib file './alib-52/slow_vdd1v2_basicCells_wl.db.alib'
+Information: State dependent leakage is now switched from on to off.
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'resnet_top'
+Information: Added key list 'DesignWare' to design 'resnet_top'. (DDB-72)
+Information: The register 'state_reg[4]' is a constant and will be removed. (OPT-1206)
+Information: The register 'sram_addr_c3_reg[6]' is a constant and will be removed. (OPT-1206)
+Information: The register 'sram_addr_c3_reg[7]' is a constant and will be removed. (OPT-1206)
+Information: The register 'sram_addr_c2_reg[6]' is a constant and will be removed. (OPT-1206)
+Information: The register 'sram_addr_c2_reg[7]' is a constant and will be removed. (OPT-1206)
+Information: The register 'sram_addr_c1_reg[6]' is a constant and will be removed. (OPT-1206)
+Information: The register 'sram_addr_c1_reg[7]' is a constant and will be removed. (OPT-1206)
+Information: The register 'sram_addr_c0_reg[6]' is a constant and will be removed. (OPT-1206)
+Information: The register 'sram_addr_c0_reg[7]' is a constant and will be removed. (OPT-1206)
+Information: In design 'resnet_top', the register 'sram_wen_b2_reg' is removed because it is merged to 'sram_wen_b0_reg'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wen_b1_reg' is removed because it is merged to 'sram_wen_b0_reg'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wen_b3_reg' is removed because it is merged to 'sram_wen_b0_reg'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_addr_c2_reg[5]' is removed because it is merged to 'sram_addr_c3_reg[5]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_addr_c1_reg[5]' is removed because it is merged to 'sram_addr_c3_reg[5]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_addr_c0_reg[5]' is removed because it is merged to 'sram_addr_c3_reg[5]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_addr_c2_reg[4]' is removed because it is merged to 'sram_addr_c3_reg[4]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_addr_c1_reg[4]' is removed because it is merged to 'sram_addr_c3_reg[4]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_addr_c0_reg[4]' is removed because it is merged to 'sram_addr_c3_reg[4]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_addr_c2_reg[3]' is removed because it is merged to 'sram_addr_c3_reg[3]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_addr_c1_reg[3]' is removed because it is merged to 'sram_addr_c3_reg[3]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_addr_c0_reg[3]' is removed because it is merged to 'sram_addr_c3_reg[3]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_addr_c2_reg[2]' is removed because it is merged to 'sram_addr_c3_reg[2]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_addr_c1_reg[2]' is removed because it is merged to 'sram_addr_c3_reg[2]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_addr_c0_reg[2]' is removed because it is merged to 'sram_addr_c3_reg[2]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_addr_c2_reg[1]' is removed because it is merged to 'sram_addr_c3_reg[1]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_addr_c1_reg[1]' is removed because it is merged to 'sram_addr_c3_reg[1]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_addr_c0_reg[1]' is removed because it is merged to 'sram_addr_c3_reg[1]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_a2_reg[31]' is removed because it is merged to 'sram_wdata_a0_reg[31]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_a1_reg[31]' is removed because it is merged to 'sram_wdata_a0_reg[31]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_a3_reg[31]' is removed because it is merged to 'sram_wdata_a0_reg[31]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_a2_reg[30]' is removed because it is merged to 'sram_wdata_a0_reg[30]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_a1_reg[30]' is removed because it is merged to 'sram_wdata_a0_reg[30]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_a3_reg[30]' is removed because it is merged to 'sram_wdata_a0_reg[30]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_a2_reg[29]' is removed because it is merged to 'sram_wdata_a0_reg[29]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_a1_reg[29]' is removed because it is merged to 'sram_wdata_a0_reg[29]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_a3_reg[29]' is removed because it is merged to 'sram_wdata_a0_reg[29]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_a2_reg[28]' is removed because it is merged to 'sram_wdata_a0_reg[28]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_a1_reg[28]' is removed because it is merged to 'sram_wdata_a0_reg[28]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_a3_reg[28]' is removed because it is merged to 'sram_wdata_a0_reg[28]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_a2_reg[27]' is removed because it is merged to 'sram_wdata_a0_reg[27]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_a1_reg[27]' is removed because it is merged to 'sram_wdata_a0_reg[27]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_a3_reg[27]' is removed because it is merged to 'sram_wdata_a0_reg[27]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_a2_reg[26]' is removed because it is merged to 'sram_wdata_a0_reg[26]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_a1_reg[26]' is removed because it is merged to 'sram_wdata_a0_reg[26]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_a3_reg[26]' is removed because it is merged to 'sram_wdata_a0_reg[26]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_a2_reg[25]' is removed because it is merged to 'sram_wdata_a0_reg[25]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_a1_reg[25]' is removed because it is merged to 'sram_wdata_a0_reg[25]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_a3_reg[25]' is removed because it is merged to 'sram_wdata_a0_reg[25]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_a2_reg[24]' is removed because it is merged to 'sram_wdata_a0_reg[24]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_a1_reg[24]' is removed because it is merged to 'sram_wdata_a0_reg[24]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_a3_reg[24]' is removed because it is merged to 'sram_wdata_a0_reg[24]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_a2_reg[23]' is removed because it is merged to 'sram_wdata_a0_reg[23]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_a1_reg[23]' is removed because it is merged to 'sram_wdata_a0_reg[23]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_a3_reg[23]' is removed because it is merged to 'sram_wdata_a0_reg[23]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_a2_reg[22]' is removed because it is merged to 'sram_wdata_a0_reg[22]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_a1_reg[22]' is removed because it is merged to 'sram_wdata_a0_reg[22]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_a3_reg[22]' is removed because it is merged to 'sram_wdata_a0_reg[22]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_a2_reg[21]' is removed because it is merged to 'sram_wdata_a0_reg[21]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_a1_reg[21]' is removed because it is merged to 'sram_wdata_a0_reg[21]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_a3_reg[21]' is removed because it is merged to 'sram_wdata_a0_reg[21]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_a2_reg[20]' is removed because it is merged to 'sram_wdata_a0_reg[20]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_a1_reg[20]' is removed because it is merged to 'sram_wdata_a0_reg[20]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_a3_reg[20]' is removed because it is merged to 'sram_wdata_a0_reg[20]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_a2_reg[19]' is removed because it is merged to 'sram_wdata_a0_reg[19]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_a1_reg[19]' is removed because it is merged to 'sram_wdata_a0_reg[19]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_a3_reg[19]' is removed because it is merged to 'sram_wdata_a0_reg[19]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_a2_reg[18]' is removed because it is merged to 'sram_wdata_a0_reg[18]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_a1_reg[18]' is removed because it is merged to 'sram_wdata_a0_reg[18]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_a3_reg[18]' is removed because it is merged to 'sram_wdata_a0_reg[18]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_a2_reg[17]' is removed because it is merged to 'sram_wdata_a0_reg[17]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_a1_reg[17]' is removed because it is merged to 'sram_wdata_a0_reg[17]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_a3_reg[17]' is removed because it is merged to 'sram_wdata_a0_reg[17]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_a2_reg[16]' is removed because it is merged to 'sram_wdata_a0_reg[16]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_a1_reg[16]' is removed because it is merged to 'sram_wdata_a0_reg[16]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_a3_reg[16]' is removed because it is merged to 'sram_wdata_a0_reg[16]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_a2_reg[15]' is removed because it is merged to 'sram_wdata_a0_reg[15]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_a1_reg[15]' is removed because it is merged to 'sram_wdata_a0_reg[15]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_a3_reg[15]' is removed because it is merged to 'sram_wdata_a0_reg[15]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_a2_reg[14]' is removed because it is merged to 'sram_wdata_a0_reg[14]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_a1_reg[14]' is removed because it is merged to 'sram_wdata_a0_reg[14]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_a3_reg[14]' is removed because it is merged to 'sram_wdata_a0_reg[14]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_a2_reg[13]' is removed because it is merged to 'sram_wdata_a0_reg[13]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_a1_reg[13]' is removed because it is merged to 'sram_wdata_a0_reg[13]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_a3_reg[13]' is removed because it is merged to 'sram_wdata_a0_reg[13]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_a2_reg[12]' is removed because it is merged to 'sram_wdata_a0_reg[12]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_a1_reg[12]' is removed because it is merged to 'sram_wdata_a0_reg[12]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_a3_reg[12]' is removed because it is merged to 'sram_wdata_a0_reg[12]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_a2_reg[11]' is removed because it is merged to 'sram_wdata_a0_reg[11]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_a1_reg[11]' is removed because it is merged to 'sram_wdata_a0_reg[11]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_a3_reg[11]' is removed because it is merged to 'sram_wdata_a0_reg[11]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_a2_reg[10]' is removed because it is merged to 'sram_wdata_a0_reg[10]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_a1_reg[10]' is removed because it is merged to 'sram_wdata_a0_reg[10]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_a3_reg[10]' is removed because it is merged to 'sram_wdata_a0_reg[10]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_a2_reg[9]' is removed because it is merged to 'sram_wdata_a0_reg[9]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_a1_reg[9]' is removed because it is merged to 'sram_wdata_a0_reg[9]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_a3_reg[9]' is removed because it is merged to 'sram_wdata_a0_reg[9]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_a2_reg[8]' is removed because it is merged to 'sram_wdata_a0_reg[8]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_a1_reg[8]' is removed because it is merged to 'sram_wdata_a0_reg[8]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_a3_reg[8]' is removed because it is merged to 'sram_wdata_a0_reg[8]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_a2_reg[7]' is removed because it is merged to 'sram_wdata_a0_reg[7]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_a1_reg[7]' is removed because it is merged to 'sram_wdata_a0_reg[7]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_a3_reg[7]' is removed because it is merged to 'sram_wdata_a0_reg[7]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_a2_reg[6]' is removed because it is merged to 'sram_wdata_a0_reg[6]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_a1_reg[6]' is removed because it is merged to 'sram_wdata_a0_reg[6]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_a3_reg[6]' is removed because it is merged to 'sram_wdata_a0_reg[6]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_a2_reg[5]' is removed because it is merged to 'sram_wdata_a0_reg[5]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_a1_reg[5]' is removed because it is merged to 'sram_wdata_a0_reg[5]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_a3_reg[5]' is removed because it is merged to 'sram_wdata_a0_reg[5]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_a2_reg[4]' is removed because it is merged to 'sram_wdata_a0_reg[4]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_a1_reg[4]' is removed because it is merged to 'sram_wdata_a0_reg[4]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_a3_reg[4]' is removed because it is merged to 'sram_wdata_a0_reg[4]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_a2_reg[3]' is removed because it is merged to 'sram_wdata_a0_reg[3]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_a1_reg[3]' is removed because it is merged to 'sram_wdata_a0_reg[3]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_a3_reg[3]' is removed because it is merged to 'sram_wdata_a0_reg[3]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_a2_reg[2]' is removed because it is merged to 'sram_wdata_a0_reg[2]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_a1_reg[2]' is removed because it is merged to 'sram_wdata_a0_reg[2]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_a3_reg[2]' is removed because it is merged to 'sram_wdata_a0_reg[2]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_a2_reg[1]' is removed because it is merged to 'sram_wdata_a0_reg[1]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_a1_reg[1]' is removed because it is merged to 'sram_wdata_a0_reg[1]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_a3_reg[1]' is removed because it is merged to 'sram_wdata_a0_reg[1]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_a2_reg[0]' is removed because it is merged to 'sram_wdata_a0_reg[0]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_a1_reg[0]' is removed because it is merged to 'sram_wdata_a0_reg[0]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_a3_reg[0]' is removed because it is merged to 'sram_wdata_a0_reg[0]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_addr_c2_reg[0]' is removed because it is merged to 'sram_addr_c3_reg[0]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_addr_c1_reg[0]' is removed because it is merged to 'sram_addr_c3_reg[0]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_addr_c0_reg[0]' is removed because it is merged to 'sram_addr_c3_reg[0]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_bytemask_n_c3_reg[0]' is removed because it is merged to 'sram_bytemask_n_c2_reg[0]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_bytemask_n_c1_reg[0]' is removed because it is merged to 'sram_bytemask_n_c2_reg[0]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_bytemask_n_c0_reg[0]' is removed because it is merged to 'sram_bytemask_n_c2_reg[0]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_bytemask_n_c2_reg[1]' is removed because it is merged to 'sram_bytemask_n_c2_reg[0]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_bytemask_n_c3_reg[1]' is removed because it is merged to 'sram_bytemask_n_c2_reg[0]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_bytemask_n_c1_reg[1]' is removed because it is merged to 'sram_bytemask_n_c2_reg[0]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_bytemask_n_c0_reg[1]' is removed because it is merged to 'sram_bytemask_n_c2_reg[0]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_bytemask_n_c2_reg[2]' is removed because it is merged to 'sram_bytemask_n_c2_reg[0]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_bytemask_n_c3_reg[2]' is removed because it is merged to 'sram_bytemask_n_c2_reg[0]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_bytemask_n_c1_reg[2]' is removed because it is merged to 'sram_bytemask_n_c2_reg[0]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_bytemask_n_c0_reg[2]' is removed because it is merged to 'sram_bytemask_n_c2_reg[0]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_bytemask_n_c2_reg[3]' is removed because it is merged to 'sram_bytemask_n_c2_reg[0]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_bytemask_n_c3_reg[3]' is removed because it is merged to 'sram_bytemask_n_c2_reg[0]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_bytemask_n_c1_reg[3]' is removed because it is merged to 'sram_bytemask_n_c2_reg[0]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_bytemask_n_c0_reg[3]' is removed because it is merged to 'sram_bytemask_n_c2_reg[0]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_c1_reg[31]' is removed because it is merged to 'sram_wdata_c0_reg[31]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_c3_reg[31]' is removed because it is merged to 'sram_wdata_c0_reg[31]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_c2_reg[31]' is removed because it is merged to 'sram_wdata_c0_reg[31]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_c1_reg[30]' is removed because it is merged to 'sram_wdata_c0_reg[30]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_c3_reg[30]' is removed because it is merged to 'sram_wdata_c0_reg[30]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_c2_reg[30]' is removed because it is merged to 'sram_wdata_c0_reg[30]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_c1_reg[29]' is removed because it is merged to 'sram_wdata_c0_reg[29]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_c3_reg[29]' is removed because it is merged to 'sram_wdata_c0_reg[29]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_c2_reg[29]' is removed because it is merged to 'sram_wdata_c0_reg[29]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_c1_reg[28]' is removed because it is merged to 'sram_wdata_c0_reg[28]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_c3_reg[28]' is removed because it is merged to 'sram_wdata_c0_reg[28]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_c2_reg[28]' is removed because it is merged to 'sram_wdata_c0_reg[28]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_c1_reg[27]' is removed because it is merged to 'sram_wdata_c0_reg[27]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_c3_reg[27]' is removed because it is merged to 'sram_wdata_c0_reg[27]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_c2_reg[27]' is removed because it is merged to 'sram_wdata_c0_reg[27]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_c1_reg[26]' is removed because it is merged to 'sram_wdata_c0_reg[26]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_c3_reg[26]' is removed because it is merged to 'sram_wdata_c0_reg[26]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_c2_reg[26]' is removed because it is merged to 'sram_wdata_c0_reg[26]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_c1_reg[25]' is removed because it is merged to 'sram_wdata_c0_reg[25]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_c3_reg[25]' is removed because it is merged to 'sram_wdata_c0_reg[25]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_c2_reg[25]' is removed because it is merged to 'sram_wdata_c0_reg[25]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_c1_reg[24]' is removed because it is merged to 'sram_wdata_c0_reg[24]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_c3_reg[24]' is removed because it is merged to 'sram_wdata_c0_reg[24]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_c2_reg[24]' is removed because it is merged to 'sram_wdata_c0_reg[24]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_c1_reg[23]' is removed because it is merged to 'sram_wdata_c0_reg[23]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_c3_reg[23]' is removed because it is merged to 'sram_wdata_c0_reg[23]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_c2_reg[23]' is removed because it is merged to 'sram_wdata_c0_reg[23]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_c1_reg[22]' is removed because it is merged to 'sram_wdata_c0_reg[22]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_c3_reg[22]' is removed because it is merged to 'sram_wdata_c0_reg[22]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_c2_reg[22]' is removed because it is merged to 'sram_wdata_c0_reg[22]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_c1_reg[21]' is removed because it is merged to 'sram_wdata_c0_reg[21]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_c3_reg[21]' is removed because it is merged to 'sram_wdata_c0_reg[21]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_c2_reg[21]' is removed because it is merged to 'sram_wdata_c0_reg[21]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_c1_reg[20]' is removed because it is merged to 'sram_wdata_c0_reg[20]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_c3_reg[20]' is removed because it is merged to 'sram_wdata_c0_reg[20]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_c2_reg[20]' is removed because it is merged to 'sram_wdata_c0_reg[20]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_c1_reg[19]' is removed because it is merged to 'sram_wdata_c0_reg[19]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_c3_reg[19]' is removed because it is merged to 'sram_wdata_c0_reg[19]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_c2_reg[19]' is removed because it is merged to 'sram_wdata_c0_reg[19]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_c1_reg[18]' is removed because it is merged to 'sram_wdata_c0_reg[18]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_c3_reg[18]' is removed because it is merged to 'sram_wdata_c0_reg[18]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_c2_reg[18]' is removed because it is merged to 'sram_wdata_c0_reg[18]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_c1_reg[17]' is removed because it is merged to 'sram_wdata_c0_reg[17]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_c3_reg[17]' is removed because it is merged to 'sram_wdata_c0_reg[17]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_c2_reg[17]' is removed because it is merged to 'sram_wdata_c0_reg[17]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_c1_reg[16]' is removed because it is merged to 'sram_wdata_c0_reg[16]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_c3_reg[16]' is removed because it is merged to 'sram_wdata_c0_reg[16]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_c2_reg[16]' is removed because it is merged to 'sram_wdata_c0_reg[16]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_c1_reg[15]' is removed because it is merged to 'sram_wdata_c0_reg[15]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_c3_reg[15]' is removed because it is merged to 'sram_wdata_c0_reg[15]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_c2_reg[15]' is removed because it is merged to 'sram_wdata_c0_reg[15]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_c1_reg[14]' is removed because it is merged to 'sram_wdata_c0_reg[14]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_c3_reg[14]' is removed because it is merged to 'sram_wdata_c0_reg[14]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_c2_reg[14]' is removed because it is merged to 'sram_wdata_c0_reg[14]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_c1_reg[13]' is removed because it is merged to 'sram_wdata_c0_reg[13]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_c3_reg[13]' is removed because it is merged to 'sram_wdata_c0_reg[13]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_c2_reg[13]' is removed because it is merged to 'sram_wdata_c0_reg[13]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_c1_reg[12]' is removed because it is merged to 'sram_wdata_c0_reg[12]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_c3_reg[12]' is removed because it is merged to 'sram_wdata_c0_reg[12]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_c2_reg[12]' is removed because it is merged to 'sram_wdata_c0_reg[12]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_c1_reg[11]' is removed because it is merged to 'sram_wdata_c0_reg[11]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_c3_reg[11]' is removed because it is merged to 'sram_wdata_c0_reg[11]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_c2_reg[11]' is removed because it is merged to 'sram_wdata_c0_reg[11]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_c1_reg[10]' is removed because it is merged to 'sram_wdata_c0_reg[10]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_c3_reg[10]' is removed because it is merged to 'sram_wdata_c0_reg[10]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_c2_reg[10]' is removed because it is merged to 'sram_wdata_c0_reg[10]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_c1_reg[9]' is removed because it is merged to 'sram_wdata_c0_reg[9]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_c3_reg[9]' is removed because it is merged to 'sram_wdata_c0_reg[9]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_c2_reg[9]' is removed because it is merged to 'sram_wdata_c0_reg[9]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_c1_reg[8]' is removed because it is merged to 'sram_wdata_c0_reg[8]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_c3_reg[8]' is removed because it is merged to 'sram_wdata_c0_reg[8]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_c2_reg[8]' is removed because it is merged to 'sram_wdata_c0_reg[8]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_c1_reg[7]' is removed because it is merged to 'sram_wdata_c0_reg[7]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_c3_reg[7]' is removed because it is merged to 'sram_wdata_c0_reg[7]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_c2_reg[7]' is removed because it is merged to 'sram_wdata_c0_reg[7]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_c1_reg[6]' is removed because it is merged to 'sram_wdata_c0_reg[6]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_c3_reg[6]' is removed because it is merged to 'sram_wdata_c0_reg[6]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_c2_reg[6]' is removed because it is merged to 'sram_wdata_c0_reg[6]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_c1_reg[5]' is removed because it is merged to 'sram_wdata_c0_reg[5]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_c3_reg[5]' is removed because it is merged to 'sram_wdata_c0_reg[5]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_c2_reg[5]' is removed because it is merged to 'sram_wdata_c0_reg[5]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_c1_reg[4]' is removed because it is merged to 'sram_wdata_c0_reg[4]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_c3_reg[4]' is removed because it is merged to 'sram_wdata_c0_reg[4]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_c2_reg[4]' is removed because it is merged to 'sram_wdata_c0_reg[4]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_c1_reg[3]' is removed because it is merged to 'sram_wdata_c0_reg[3]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_c3_reg[3]' is removed because it is merged to 'sram_wdata_c0_reg[3]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_c2_reg[3]' is removed because it is merged to 'sram_wdata_c0_reg[3]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_c1_reg[2]' is removed because it is merged to 'sram_wdata_c0_reg[2]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_c3_reg[2]' is removed because it is merged to 'sram_wdata_c0_reg[2]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_c2_reg[2]' is removed because it is merged to 'sram_wdata_c0_reg[2]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_c1_reg[1]' is removed because it is merged to 'sram_wdata_c0_reg[1]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_c3_reg[1]' is removed because it is merged to 'sram_wdata_c0_reg[1]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_c2_reg[1]' is removed because it is merged to 'sram_wdata_c0_reg[1]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_c1_reg[0]' is removed because it is merged to 'sram_wdata_c0_reg[0]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_c3_reg[0]' is removed because it is merged to 'sram_wdata_c0_reg[0]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_c2_reg[0]' is removed because it is merged to 'sram_wdata_c0_reg[0]'. (OPT-1215)
+ Implement Synthetic for 'resnet_top'.
+Information: The register 'sram_wdata_b0_reg[31]' is a constant and will be removed. (OPT-1206)
+Information: The register 'sram_wdata_b0_reg[23]' is a constant and will be removed. (OPT-1206)
+Information: The register 'sram_wdata_b0_reg[15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'sram_wdata_b0_reg[7]' is a constant and will be removed. (OPT-1206)
+Information: The register 'sram_wdata_b1_reg[31]' is a constant and will be removed. (OPT-1206)
+Information: The register 'sram_wdata_b1_reg[23]' is a constant and will be removed. (OPT-1206)
+Information: The register 'sram_wdata_b1_reg[15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'sram_wdata_b1_reg[7]' is a constant and will be removed. (OPT-1206)
+Information: The register 'sram_wdata_b2_reg[31]' is a constant and will be removed. (OPT-1206)
+Information: The register 'sram_wdata_b2_reg[23]' is a constant and will be removed. (OPT-1206)
+Information: The register 'sram_wdata_b2_reg[15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'sram_wdata_b2_reg[7]' is a constant and will be removed. (OPT-1206)
+Information: The register 'sram_wdata_b3_reg[31]' is a constant and will be removed. (OPT-1206)
+Information: The register 'sram_wdata_b3_reg[23]' is a constant and will be removed. (OPT-1206)
+Information: The register 'sram_wdata_b3_reg[15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'sram_wdata_b3_reg[7]' is a constant and will be removed. (OPT-1206)
+Information: The register 'sram_addr_a1_reg[7]' is a constant and will be removed. (OPT-1206)
+Information: The register 'sram_addr_a2_reg[7]' is a constant and will be removed. (OPT-1206)
+Information: The register 'sram_addr_a3_reg[7]' is a constant and will be removed. (OPT-1206)
+Information: The register 'c3_tmp_reg[7]' is a constant and will be removed. (OPT-1206)
+Information: The register 'c2_tmp_reg[7]' is a constant and will be removed. (OPT-1206)
+Information: The register 'c1_tmp_reg[7]' is a constant and will be removed. (OPT-1206)
+Information: The register 'c0_tmp_reg[7]' is a constant and will be removed. (OPT-1206)
+  Processing 'SNPS_CLOCK_GATE_HIGH_resnet_top'
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+Information: The library cell 'TIELO' in the library 'slow_vdd1v2' is not characterized for internal power. (PWR-536)
+Information: The library cell 'TIEHI' in the library 'slow_vdd1v2' is not characterized for internal power. (PWR-536)
+Information: The target library(s) contains cell(s), other than black boxes, that are not characterized for internal power. (PWR-24)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_resnet_top, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design resnet_top_RSOP_673, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design resnet_top_RSOP_674, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design resnet_top_RSOP_675, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design resnet_top_RSOP_676, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design resnet_top_RSOP_677, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design resnet_top_DP_OP_722J1_166_1954_J1_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design resnet_top_DP_OP_721J1_165_1954_J1_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design resnet_top_DP_OP_720J1_164_1954_J1_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design resnet_top_DP_OP_719J1_163_1954_J1_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design resnet_top_DP_OP_718J1_162_1692_J1_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design resnet_top_DP_OP_717J1_161_1692_J1_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design resnet_top_DP_OP_716J1_160_1692_J1_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design resnet_top_DP_OP_715J1_159_1692_J1_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design resnet_top_DP_OP_714J1_158_1692_J1_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design resnet_top_DP_OP_713J1_157_1692_J1_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design resnet_top_DP_OP_712J1_156_1692_J1_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design resnet_top_DP_OP_711J1_155_1692_J1_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design resnet_top_DP_OP_710J1_154_1692_J1_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design resnet_top_DP_OP_709J1_153_1692_J1_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design resnet_top_DP_OP_708J1_152_1692_J1_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design resnet_top_DP_OP_707J1_151_1692_J1_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design resnet_top_DP_OP_706J1_150_1692_J1_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design resnet_top_DP_OP_705J1_149_1692_J1_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design resnet_top_DP_OP_704J1_148_1692_J1_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design resnet_top_DP_OP_703J1_147_1692_J1_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design resnet_top_DP_OP_702J1_146_1692_J1_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design resnet_top_DP_OP_701J1_145_1692_J1_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design resnet_top_DP_OP_700J1_144_1692_J1_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design resnet_top_DP_OP_699J1_143_1692_J1_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design resnet_top_DP_OP_698J1_142_1692_J1_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design resnet_top_DP_OP_697J1_141_1692_J1_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design resnet_top_DP_OP_696J1_140_1692_J1_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design resnet_top_DP_OP_695J1_139_1692_J1_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design resnet_top_DP_OP_694J1_138_1692_J1_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design resnet_top_DP_OP_693J1_137_1692_J1_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design resnet_top_DP_OP_692J1_136_1692_J1_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design resnet_top_DP_OP_691J1_135_1692_J1_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design resnet_top_DP_OP_690J1_134_1692_J1_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design resnet_top_DP_OP_689J1_133_1692_J1_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design resnet_top_DP_OP_688J1_132_1692_J1_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design resnet_top_DP_OP_687J1_131_1692_J1_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design resnet_top_DP_OP_686J1_130_1692_J1_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design resnet_top_DP_OP_685J1_129_1692_J1_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design resnet_top_DP_OP_684J1_128_1692_J1_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design resnet_top_DP_OP_683J1_127_1692_J1_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design resnet_top_DP_OP_682J1_126_3642_J1_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design resnet_top_DP_OP_681J1_125_3642_J1_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design resnet_top_DP_OP_680J1_124_3642_J1_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design resnet_top_DP_OP_679J1_123_3642_J1_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design resnet_top_DP_OP_678J1_122_5738_J1_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design resnet_top_DW01_dec_J1_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design resnet_top_DW01_inc_J1_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design resnet_top_DW01_inc_J1_1, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design resnet_top_DW01_inc_J1_2, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design resnet_top_DP_OP_666J1_167_1374_J1_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design resnet_top_DP_OP_670J1_172_47_J1_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design resnet_top_DP_OP_672J1_176_7578_J1_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design resnet_top_DP_OP_677J1_183_4501_J1_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design resnet_top_DP_OP_676J1_182_330_J1_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design resnet_top_DP_OP_675J1_181_330_J1_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design resnet_top_DP_OP_674J1_180_330_J1_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design resnet_top_DP_OP_677J1_187_4621_J1_0, since there are no registers. (PWR-806)
+Information: Performing clock-gating on design resnet_top. (PWR-730)
+Information: In design 'resnet_top', the register 'sram_bytemask_n_b2_reg[1]' is removed because it is merged to 'sram_bytemask_n_b3_reg[0]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_bytemask_n_b1_reg[2]' is removed because it is merged to 'sram_bytemask_n_b3_reg[0]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_bytemask_n_b0_reg[3]' is removed because it is merged to 'sram_bytemask_n_b3_reg[0]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_a0_reg[15]' is removed because it is merged to 'sram_wdata_a0_reg[7]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_a0_reg[23]' is removed because it is merged to 'sram_wdata_a0_reg[7]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_a0_reg[31]' is removed because it is merged to 'sram_wdata_a0_reg[7]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_a0_reg[14]' is removed because it is merged to 'sram_wdata_a0_reg[6]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_a0_reg[22]' is removed because it is merged to 'sram_wdata_a0_reg[6]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_a0_reg[30]' is removed because it is merged to 'sram_wdata_a0_reg[6]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_a0_reg[13]' is removed because it is merged to 'sram_wdata_a0_reg[5]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_a0_reg[21]' is removed because it is merged to 'sram_wdata_a0_reg[5]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_a0_reg[29]' is removed because it is merged to 'sram_wdata_a0_reg[5]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_a0_reg[12]' is removed because it is merged to 'sram_wdata_a0_reg[4]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_a0_reg[20]' is removed because it is merged to 'sram_wdata_a0_reg[4]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_a0_reg[28]' is removed because it is merged to 'sram_wdata_a0_reg[4]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_a0_reg[11]' is removed because it is merged to 'sram_wdata_a0_reg[3]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_a0_reg[19]' is removed because it is merged to 'sram_wdata_a0_reg[3]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_a0_reg[27]' is removed because it is merged to 'sram_wdata_a0_reg[3]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_a0_reg[10]' is removed because it is merged to 'sram_wdata_a0_reg[2]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_a0_reg[18]' is removed because it is merged to 'sram_wdata_a0_reg[2]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_a0_reg[26]' is removed because it is merged to 'sram_wdata_a0_reg[2]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_a0_reg[9]' is removed because it is merged to 'sram_wdata_a0_reg[1]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_a0_reg[17]' is removed because it is merged to 'sram_wdata_a0_reg[1]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_a0_reg[25]' is removed because it is merged to 'sram_wdata_a0_reg[1]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_a0_reg[8]' is removed because it is merged to 'sram_wdata_a0_reg[0]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_a0_reg[16]' is removed because it is merged to 'sram_wdata_a0_reg[0]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_a0_reg[24]' is removed because it is merged to 'sram_wdata_a0_reg[0]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_bytemask_n_b2_reg[2]' is removed because it is merged to 'sram_bytemask_n_b3_reg[3]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_bytemask_n_b1_reg[1]' is removed because it is merged to 'sram_bytemask_n_b3_reg[3]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_bytemask_n_b0_reg[0]' is removed because it is merged to 'sram_bytemask_n_b3_reg[3]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_bytemask_n_b2_reg[0]' is removed because it is merged to 'sram_bytemask_n_b3_reg[1]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_bytemask_n_b1_reg[3]' is removed because it is merged to 'sram_bytemask_n_b3_reg[1]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_bytemask_n_b0_reg[2]' is removed because it is merged to 'sram_bytemask_n_b3_reg[1]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_bytemask_n_b2_reg[3]' is removed because it is merged to 'sram_bytemask_n_b3_reg[2]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_bytemask_n_b1_reg[0]' is removed because it is merged to 'sram_bytemask_n_b3_reg[2]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_bytemask_n_b0_reg[1]' is removed because it is merged to 'sram_bytemask_n_b3_reg[2]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_raddr_weight_reg[6]' is removed because it is merged to 'sram_raddr_bias_reg[4]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_b0_reg[9]' is removed because it is merged to 'sram_wdata_b0_reg[1]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_b0_reg[17]' is removed because it is merged to 'sram_wdata_b0_reg[1]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_b0_reg[25]' is removed because it is merged to 'sram_wdata_b0_reg[1]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_b0_reg[8]' is removed because it is merged to 'sram_wdata_b0_reg[0]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_b0_reg[16]' is removed because it is merged to 'sram_wdata_b0_reg[0]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_b0_reg[24]' is removed because it is merged to 'sram_wdata_b0_reg[0]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_b1_reg[9]' is removed because it is merged to 'sram_wdata_b1_reg[1]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_b1_reg[17]' is removed because it is merged to 'sram_wdata_b1_reg[1]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_b1_reg[25]' is removed because it is merged to 'sram_wdata_b1_reg[1]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_b1_reg[8]' is removed because it is merged to 'sram_wdata_b1_reg[0]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_b1_reg[16]' is removed because it is merged to 'sram_wdata_b1_reg[0]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_b1_reg[24]' is removed because it is merged to 'sram_wdata_b1_reg[0]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_b2_reg[9]' is removed because it is merged to 'sram_wdata_b2_reg[1]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_b2_reg[17]' is removed because it is merged to 'sram_wdata_b2_reg[1]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_b2_reg[25]' is removed because it is merged to 'sram_wdata_b2_reg[1]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_b2_reg[8]' is removed because it is merged to 'sram_wdata_b2_reg[0]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_b2_reg[16]' is removed because it is merged to 'sram_wdata_b2_reg[0]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_b2_reg[24]' is removed because it is merged to 'sram_wdata_b2_reg[0]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_b3_reg[9]' is removed because it is merged to 'sram_wdata_b3_reg[1]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_b3_reg[17]' is removed because it is merged to 'sram_wdata_b3_reg[1]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_b3_reg[25]' is removed because it is merged to 'sram_wdata_b3_reg[1]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_b3_reg[8]' is removed because it is merged to 'sram_wdata_b3_reg[0]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_b3_reg[16]' is removed because it is merged to 'sram_wdata_b3_reg[0]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_b3_reg[24]' is removed because it is merged to 'sram_wdata_b3_reg[0]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_b0_reg[14]' is removed because it is merged to 'sram_wdata_b0_reg[6]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_b0_reg[22]' is removed because it is merged to 'sram_wdata_b0_reg[6]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_b0_reg[30]' is removed because it is merged to 'sram_wdata_b0_reg[6]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_b1_reg[14]' is removed because it is merged to 'sram_wdata_b1_reg[6]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_b1_reg[22]' is removed because it is merged to 'sram_wdata_b1_reg[6]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_b1_reg[30]' is removed because it is merged to 'sram_wdata_b1_reg[6]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_b2_reg[14]' is removed because it is merged to 'sram_wdata_b2_reg[6]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_b2_reg[22]' is removed because it is merged to 'sram_wdata_b2_reg[6]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_b2_reg[30]' is removed because it is merged to 'sram_wdata_b2_reg[6]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_b3_reg[14]' is removed because it is merged to 'sram_wdata_b3_reg[6]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_b3_reg[22]' is removed because it is merged to 'sram_wdata_b3_reg[6]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_b3_reg[30]' is removed because it is merged to 'sram_wdata_b3_reg[6]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_b0_reg[13]' is removed because it is merged to 'sram_wdata_b0_reg[5]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_b0_reg[21]' is removed because it is merged to 'sram_wdata_b0_reg[5]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_b0_reg[29]' is removed because it is merged to 'sram_wdata_b0_reg[5]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_b1_reg[13]' is removed because it is merged to 'sram_wdata_b1_reg[5]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_b1_reg[21]' is removed because it is merged to 'sram_wdata_b1_reg[5]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_b1_reg[29]' is removed because it is merged to 'sram_wdata_b1_reg[5]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_b2_reg[13]' is removed because it is merged to 'sram_wdata_b2_reg[5]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_b2_reg[21]' is removed because it is merged to 'sram_wdata_b2_reg[5]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_b2_reg[29]' is removed because it is merged to 'sram_wdata_b2_reg[5]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_b3_reg[13]' is removed because it is merged to 'sram_wdata_b3_reg[5]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_b3_reg[21]' is removed because it is merged to 'sram_wdata_b3_reg[5]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_b3_reg[29]' is removed because it is merged to 'sram_wdata_b3_reg[5]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_b0_reg[12]' is removed because it is merged to 'sram_wdata_b0_reg[4]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_b0_reg[20]' is removed because it is merged to 'sram_wdata_b0_reg[4]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_b0_reg[28]' is removed because it is merged to 'sram_wdata_b0_reg[4]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_b1_reg[12]' is removed because it is merged to 'sram_wdata_b1_reg[4]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_b1_reg[20]' is removed because it is merged to 'sram_wdata_b1_reg[4]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_b1_reg[28]' is removed because it is merged to 'sram_wdata_b1_reg[4]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_b2_reg[12]' is removed because it is merged to 'sram_wdata_b2_reg[4]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_b2_reg[20]' is removed because it is merged to 'sram_wdata_b2_reg[4]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_b2_reg[28]' is removed because it is merged to 'sram_wdata_b2_reg[4]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_b3_reg[12]' is removed because it is merged to 'sram_wdata_b3_reg[4]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_b3_reg[20]' is removed because it is merged to 'sram_wdata_b3_reg[4]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_b3_reg[28]' is removed because it is merged to 'sram_wdata_b3_reg[4]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_b0_reg[11]' is removed because it is merged to 'sram_wdata_b0_reg[3]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_b0_reg[19]' is removed because it is merged to 'sram_wdata_b0_reg[3]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_b0_reg[27]' is removed because it is merged to 'sram_wdata_b0_reg[3]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_b1_reg[11]' is removed because it is merged to 'sram_wdata_b1_reg[3]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_b1_reg[19]' is removed because it is merged to 'sram_wdata_b1_reg[3]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_b1_reg[27]' is removed because it is merged to 'sram_wdata_b1_reg[3]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_b2_reg[11]' is removed because it is merged to 'sram_wdata_b2_reg[3]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_b2_reg[19]' is removed because it is merged to 'sram_wdata_b2_reg[3]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_b2_reg[27]' is removed because it is merged to 'sram_wdata_b2_reg[3]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_b3_reg[11]' is removed because it is merged to 'sram_wdata_b3_reg[3]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_b3_reg[19]' is removed because it is merged to 'sram_wdata_b3_reg[3]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_b3_reg[27]' is removed because it is merged to 'sram_wdata_b3_reg[3]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_b0_reg[10]' is removed because it is merged to 'sram_wdata_b0_reg[2]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_b0_reg[18]' is removed because it is merged to 'sram_wdata_b0_reg[2]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_b0_reg[26]' is removed because it is merged to 'sram_wdata_b0_reg[2]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_b1_reg[10]' is removed because it is merged to 'sram_wdata_b1_reg[2]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_b1_reg[18]' is removed because it is merged to 'sram_wdata_b1_reg[2]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_b1_reg[26]' is removed because it is merged to 'sram_wdata_b1_reg[2]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_b2_reg[10]' is removed because it is merged to 'sram_wdata_b2_reg[2]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_b2_reg[18]' is removed because it is merged to 'sram_wdata_b2_reg[2]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_b2_reg[26]' is removed because it is merged to 'sram_wdata_b2_reg[2]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_b3_reg[10]' is removed because it is merged to 'sram_wdata_b3_reg[2]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_b3_reg[18]' is removed because it is merged to 'sram_wdata_b3_reg[2]'. (OPT-1215)
+Information: In design 'resnet_top', the register 'sram_wdata_b3_reg[26]' is removed because it is merged to 'sram_wdata_b3_reg[2]'. (OPT-1215)
+
+  Beginning Mapping Optimizations  (Ultra High effort)
+  -------------------------------
+  Mapping Optimization (Phase 1)
+
+  Beginning Constant Register Removal
+  -----------------------------------
+
+  Beginning Global Optimizations
+  ------------------------------
+  Numerical Synthesis (Phase 1)
+  Numerical Synthesis (Phase 2)
+  Global Optimization (Phase 1)
+  Global Optimization (Phase 2)
+  Global Optimization (Phase 3)
+  Global Optimization (Phase 4)
+  Global Optimization (Phase 5)
+  Global Optimization (Phase 6)
+  Global Optimization (Phase 7)
+  Global Optimization (Phase 8)
+  Global Optimization (Phase 9)
+  Global Optimization (Phase 10)
+  Global Optimization (Phase 11)
+  Global Optimization (Phase 12)
+  Global Optimization (Phase 13)
+  Global Optimization (Phase 14)
+  Global Optimization (Phase 15)
+  Global Optimization (Phase 16)
+  Global Optimization (Phase 17)
+  Global Optimization (Phase 18)
+  Global Optimization (Phase 19)
+  Global Optimization (Phase 20)
+  Global Optimization (Phase 21)
+  Global Optimization (Phase 22)
+  Global Optimization (Phase 23)
+  Global Optimization (Phase 24)
+  Global Optimization (Phase 25)
+  Global Optimization (Phase 26)
+  Global Optimization (Phase 27)
+  Global Optimization (Phase 28)
+  Global Optimization (Phase 29)
+  Global Optimization (Phase 30)
+  Global Optimization (Phase 31)
+
+  Beginning Isolate Ports
+  -----------------------
+
+  Beginning Delay Optimization
+  ----------------------------
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:01:05   21868.3      1.66     851.5       5.1                           834446.8125
+  Mapping 'resnet_top_DP_OP_666_191_1374_2'
+  Mapping 'resnet_top_DP_OP_715J1_159_1692_1'
+  Mapping 'resnet_top_DP_OP_722J1_166_1954_1'
+  Mapping 'resnet_top_DP_OP_721J1_165_1954_1'
+  Mapping 'resnet_top_DP_OP_720J1_164_1954_1'
+  Mapping 'resnet_top_DP_OP_719J1_163_1954_1'
+    0:01:26   21541.3      0.60     334.9      10.1                           724957.4375
+    0:01:26   21541.3      0.60     334.9      10.1                           724957.4375
+    0:01:26   21541.3      0.60     334.9      10.1                           724957.4375
+
+  Beginning WLM Backend Optimization
+  --------------------------------------
+    0:01:35   20418.4      0.57     300.5     533.1                           655318.3125
+    0:01:36   20406.1      0.57     296.7     533.1                           646621.0625
+    0:01:38   20158.2      0.57     217.6     533.1                           594140.6250
+    0:01:38   20158.2      0.57     217.6     533.1                           594140.6250
+    0:01:49   20322.3      0.33      92.5     538.5                           592473.5000
+    0:01:49   20322.3      0.33      92.5     538.5                           592473.5000
+    0:01:49   20329.8      0.32      92.3     538.5                           592376.8750
+    0:01:49   20329.8      0.32      92.3     538.5                           592376.8750
+    0:01:51   20349.0      0.31      91.6     538.5                           593366.5000
+    0:01:51   20349.0      0.31      91.6     538.5                           593366.5000
+    0:01:56   20342.5      0.18      35.2     542.1                           580587.7500
+    0:01:56   20342.5      0.18      35.2     542.1                           580587.7500
+    0:01:57   20351.1      0.18      35.0     542.1                           580853.5000
+    0:01:57   20351.1      0.18      35.0     542.1                           580853.5000
+    0:02:02   20412.6      0.14      27.0     542.1                           582059.1875
+    0:02:02   20412.6      0.14      27.0     542.1                           582059.1875
+    0:02:07   20434.2      0.14      26.4     542.1                           583631.5000
+    0:02:07   20434.2      0.14      26.4     542.1                           583631.5000
+    0:02:12   20471.8      0.12      21.2     542.1                           584801.4375
+    0:02:12   20471.8      0.12      21.2     542.1                           584801.4375
+    0:02:16   20490.6      0.12      21.0     542.1                           585888.2500
+
+
+  Beginning Design Rule Fixing  (max_transition)  (max_fanout)
+  ----------------------------
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:02:16   20490.6      0.12      21.0     542.1                           585888.2500
+  Global Optimization (Phase 32)
+  Global Optimization (Phase 33)
+  Global Optimization (Phase 34)
+    0:02:19   20667.7      0.09      16.2       0.0 conv_a0_reg_reg[14]/D     585517.0625
+    0:02:19   20684.5      0.09      15.6       0.0                           585752.1250
+    0:02:24   20708.4      0.09      14.1       0.0                           587260.9375
+
+
+  Beginning Leakage Power Optimization  (max_leakage_power 0)
+  ------------------------------------
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:02:24   20708.4      0.09      14.1       0.0                           587260.9375
+  Global Optimization (Phase 35)
+  Global Optimization (Phase 36)
+  Global Optimization (Phase 37)
+  Global Optimization (Phase 38)
+  Global Optimization (Phase 39)
+  Global Optimization (Phase 40)
+  Global Optimization (Phase 41)
+  Global Optimization (Phase 42)
+  Global Optimization (Phase 43)
+  Global Optimization (Phase 44)
+  Global Optimization (Phase 45)
+  Global Optimization (Phase 46)
+  Global Optimization (Phase 47)
+  Global Optimization (Phase 48)
+  Global Optimization (Phase 49)
+  Global Optimization (Phase 50)
+    0:02:29   20262.1      0.05       5.2       0.0 conv_a1_reg_reg[14]/D     512540.3125
+    0:02:31   20307.3      0.04       2.8       0.0                           513666.5000
+    0:02:33   20315.8      0.04       2.4       0.0                           513932.3750
+    0:02:33   20315.8      0.04       2.4       0.0                           513932.3750
+    0:02:34   20244.3      0.04       2.4       0.0                           513724.9688
+    0:02:34   20244.3      0.04       2.4       0.0                           513724.9688
+    0:02:35   20244.3      0.04       2.4       0.0                           513724.9688
+    0:02:35   20244.3      0.04       2.4       0.0                           513724.9688
+    0:02:35   20244.7      0.04       2.4       0.0                           513747.2500
+    0:02:35   20244.7      0.04       2.4       0.0                           513747.2500
+    0:02:36   20256.3      0.04       2.3       0.1                           515148.0000
+    0:02:36   20256.3      0.04       2.3       0.1                           515148.0000
+    0:02:38   20293.9      0.03       1.8       0.1                           517104.8438
+    0:02:38   20293.9      0.03       1.8       0.1                           517104.8438
+    0:02:41   20309.7      0.02       1.8       0.1                           518235.8750
+    0:02:41   20309.7      0.02       1.8       0.1                           518235.8750
+    0:02:51   20346.6      0.00       0.1       7.0                           521548.3125
+    0:02:51   20346.6      0.00       0.1       7.0                           521548.3125
+    0:02:56   20353.8      0.00       0.0       7.0                           521944.7812
+    0:02:56   20353.8      0.00       0.0       7.0                           521944.7812
+    0:02:57   20353.1      0.00       0.0       7.0                           522001.8125
+    0:02:57   20353.1      0.00       0.0       7.0                           522001.8125
+    0:02:58   20353.1      0.00       0.0       7.0                           522023.0312
+    0:02:59   20520.7      0.07       0.6       7.0                           534999.3125
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:02:59   20520.7      0.07       0.6       7.0                           534999.3125
+    0:03:01   19856.5      0.11       6.0       7.0                           538968.6875
+    0:03:04   19922.5      0.02       1.7      22.0                           537669.7500
+    0:03:05   19922.5      0.02       1.7      22.0                           537669.7500
+    0:03:05   19922.5      0.02       1.7      22.0                           537669.7500
+    0:03:07   20034.7      0.02       1.5      22.0                           531857.1875
+    0:03:10   20089.8      0.02       1.0      16.0 net36023                  526871.0000
+    0:03:12   20154.4      0.00       0.0      16.0 conv_a3_reg_reg[14]/D     528623.1250
+    0:03:13   20177.0      0.00       0.0       0.0                           528440.1875
+    0:03:13   20177.0      0.00       0.0       0.0                           528440.1875
+    0:03:13   20177.0      0.00       0.0       0.0                           528440.1875
+    0:03:13   20177.0      0.00       0.0       0.0                           528440.1875
+    0:03:16   19867.5      0.00       0.0       0.0                           537304.7500
+Loading db file '/usr/cadtool/GPDK45/gsclib045_svt_v4.4/gsclib045/db/slow_vdd1v2_basicCells_wl.db'
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+Information: State dependent leakage is now switched from off to on.
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+1
+compile_ultra -incremental -exact_map -no_autoungroup -no_seq_output_inversion -no_boundary_optimization
+Warning: The value of variable 'compile_preserve_subdesign_interfaces' has been changed to true because '-no_boundary_optimization' is used. (OPT-133)
+Information: Starting from 2013.12 release, constant propagation is enabled even when boundary optimization is disabled. (OPT-1318)
+Information: Performing power optimization. (PWR-850)
+Alib files are up-to-date.
+
+Information: There are 145 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+
+Loaded alib file './alib-52/slow_vdd1v2_basicCells_wl.db.alib'
+Information: State dependent leakage is now switched from on to off.
+
+  Beginning Pass 1 Mapping  (Incremental)
+  ------------------------
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+Information: The library cell 'TIELO' in the library 'slow_vdd1v2' is not characterized for internal power. (PWR-536)
+Information: The library cell 'TIEHI' in the library 'slow_vdd1v2' is not characterized for internal power. (PWR-536)
+Information: The target library(s) contains cell(s), other than black boxes, that are not characterized for internal power. (PWR-24)
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:00:03   19867.5      0.00       0.0       0.0                           537304.7500
+    0:00:03   19867.5      0.00       0.0       0.0                           537304.7500
+
+  Beginning Mapping Optimizations  (Ultra High effort)  (Incremental)
+  -------------------------------
+
+  Beginning Incremental Implementation Selection
+  ----------------------------------------------
+    0:00:05   19795.6      0.08       8.6      39.1                           534604.3125
+    0:00:05   19795.6      0.08       8.6      39.1                           534604.3125
+    0:00:05   19795.6      0.08       8.6      39.1                           534604.3125
+    0:00:05   19795.6      0.08       8.6      39.1                           534604.3125
+  Global Optimization (Phase 51)
+  Global Optimization (Phase 52)
+  Global Optimization (Phase 53)
+  Global Optimization (Phase 54)
+  Global Optimization (Phase 55)
+
+
+
+  Beginning Delay Optimization Phase
+  ----------------------------------
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:00:06   19787.1      0.09       9.3      39.1                           534222.5625
+    0:00:06   19787.1      0.09       9.3      39.1                           534222.5625
+    0:00:07   19976.9      0.09       8.5      39.1                           525087.1250
+    0:00:07   19976.9      0.09       8.5      39.1                           525087.1250
+    0:00:08   19980.3      0.06       4.9      39.1                           525159.9375
+    0:00:08   19980.3      0.06       4.9      39.1                           525159.9375
+    0:00:14   20015.0      0.03       2.3      43.1                           527266.9375
+
+  Beginning Delay Optimization
+  ----------------------------
+    0:00:14   20015.0      0.03       2.3      43.1                           527206.0625
+    0:00:15   20015.0      0.03       2.3      43.1                           527266.9375
+    0:00:15   20015.0      0.03       2.3      43.1                           527206.0625
+    0:00:16   20015.0      0.03       2.3      43.1                           527266.9375
+    0:00:16   20015.0      0.03       2.3      43.1                           527206.0625
+    0:00:16   20015.0      0.03       2.3      43.1                           527206.0625
+
+
+  Beginning Design Rule Fixing  (max_transition)  (max_fanout)
+  ----------------------------
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:00:16   20015.0      0.03       2.3      43.1                           527206.0625
+    0:00:20   20063.2      0.02       1.2      32.0 mult_a2_1_reg[10]/D       527819.8750
+    0:00:24   20077.2      0.01       0.3       4.0 n3356                     527983.4375
+    0:00:25   20107.3      0.00       0.0       0.0                           528274.6875
+    0:00:26   20084.6      0.00       0.0       0.0                           527051.3750
+    0:00:26   20084.6      0.00       0.0       0.0                           527051.3750
+    0:00:26   20084.6      0.00       0.0       0.0                           527051.3750
+    0:00:26   20084.6      0.00       0.0       0.0                           527051.3750
+    0:00:26   20084.6      0.00       0.0       0.0                           527051.3750
+    0:00:26   20084.6      0.00       0.0       0.0                           527051.3750
+    0:00:26   20084.6      0.00       0.0       0.0                           527051.3750
+    0:00:26   20084.6      0.00       0.0       0.0                           527051.3750
+    0:00:26   20084.6      0.00       0.0       0.0                           527051.3750
+
+
+  Beginning Leakage Power Optimization  (max_leakage_power 0)
+  ------------------------------------
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:00:26   20084.6      0.00       0.0       0.0                           527051.3750
+    0:00:28   20070.6      0.00       0.0       0.0                           526477.6250
+    0:00:29   20068.2      0.00       0.0       0.0                           526408.0625
+    0:00:29   20068.2      0.00       0.0       0.0                           526408.0625
+    0:00:29   20068.2      0.00       0.0       0.0                           526408.0625
+    0:00:29   20068.2      0.00       0.0       0.0                           526408.0625
+    0:00:29   20068.2      0.00       0.0       0.0                           526408.0625
+    0:00:29   20068.2      0.00       0.0       0.0                           526408.0625
+    0:00:29   20068.2      0.00       0.0       0.0                           526408.0625
+    0:00:29   20068.2      0.00       0.0       0.0                           526408.0625
+    0:00:29   20068.2      0.00       0.0       0.0                           526408.0625
+    0:00:29   20060.0      0.00       0.0       0.0                           526687.7500
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:00:29   20060.0      0.00       0.0       0.0                           526687.7500
+    0:00:30   20060.4      0.00       0.0       0.0                           526666.9375
+    0:00:33   20101.4      0.00       0.0       0.0                           522340.5312
+    0:00:33   20101.4      0.00       0.0       0.0                           522340.5312
+    0:00:40   20071.0      0.00       0.0       0.0                           523488.2812
+Loading db file '/usr/cadtool/GPDK45/gsclib045_svt_v4.4/gsclib045/db/slow_vdd1v2_basicCells_wl.db'
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+Information: State dependent leakage is now switched from off to on.
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+1
+# remove dummy ports
+remove_unconnected_ports [get_cells -hierarchical *]
+1
+remove_unconnected_ports [get_cells -hierarchical *] -blast_buses
+1
+1
+source -echo -verbose 3_report.tcl 
+###-----------------------------Naming Rules----------------------------
+set bus_inference_style {%s[%d]}
+%s[%d]
+set bus_naming_style {%s[%d]}
+%s[%d]
+set hdlout_internal_busses true
+true
+change_names -rules verilog -hierarchy
+1
+define_name_rules name_rule -allowed {a-z A-Z 0-9 _} -max_length 255 -type cell
+1
+define_name_rules name_rule -allowed {a-z A-Z 0-9 _[]} -max_length 255 -type net
+1
+define_name_rules name_rule -map {{"\\*cell\\*" "cell"}}
+1
+define_name_rules name_rule -case_insensitive
+1
+change_names -hierarchy -rules name_rule
+1
+###--------------------------Netlist-related------------------------------------
+write -format ddc     -hierarchy -output ./netlist/${TOPLEVEL}_syn.ddc
+Writing ddc file './netlist/resnet_top_syn.ddc'.
+1
+write -format verilog -hierarchy -output ./netlist/${TOPLEVEL}_syn.v
+Writing verilog file '/home/u106/u106061101/ICLAB/HW5/PART3/syn_7142/netlist/resnet_top_syn.v'.
+1
+write_sdf -version 1.0  -context verilog ./netlist/${TOPLEVEL}_syn.sdf
+Information: Annotated 'cell' delays are assumed to include load delay. (UID-282)
+Information: Writing timing information to file '/home/u106/u106061101/ICLAB/HW5/PART3/syn_7142/netlist/resnet_top_syn.sdf'. (WT-3)
+Information: Updating design information... (UID-85)
+1
+write_sdc ./netlist/${TOPLEVEL}_syn.sdc
+1
+write_saif -output ./netlist/${TOPLEVEL}_syn.saif 
+Information: Writing backward SAIF information to file './netlist/resnet_top_syn.saif'. (PWR-458)
+1
+###---------------------------Syntheis result reports----------------------------
+# ===== Timing report =====
+report_timing -delay min -max_paths 4 > ./report/report_hold_${TOPLEVEL}.out
+report_timing -delay max -max_paths 4 > ./report/report_setup_${TOPLEVEL}.out
+report_timing -path full -delay max -max_paths 1 -nworst 1 -significant_digits 4 > ./report/report_time_${TOPLEVEL}.out
+# ===== Area report =====
+report_area -hier  > ./report/report_area_${TOPLEVEL}.out
+# ===== Power report =====
+report_power -hier > ./report/report_power_${TOPLEVEL}.out
+# ===== violations =====
+report_constraint -all_violators > ./report/report_violation_${TOPLEVEL}.out
+exit
+
+Thank you...

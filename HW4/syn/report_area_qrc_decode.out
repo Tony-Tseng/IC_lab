@@ -1,0 +1,49 @@
+ 
+****************************************
+Report : area
+Design : qrc_decode
+Version: O-2018.06
+Date   : Wed Dec  2 15:50:50 2020
+****************************************
+
+Library(s) Used:
+
+    slow_vdd1v2 (File: /usr/cadtool/GPDK45/gsclib045_svt_v4.4/gsclib045/db/slow_vdd1v2_basicCells_wl.db)
+
+Number of ports:                           45
+Number of nets:                          2269
+Number of cells:                         2193
+Number of combinational cells:           2015
+Number of sequential cells:               172
+Number of macros/black boxes:               0
+Number of buf/inv:                        322
+Number of references:                      76
+
+Combinational area:               3138.876070
+Buf/Inv area:                      231.192005
+Noncombinational area:             992.142022
+Macro/Black Box area:                0.000000
+Net Interconnect area:               0.000000
+
+Total cell area:                  4131.018092
+Total area:                       4131.018092
+
+Hierarchical area distribution
+------------------------------
+
+                                  Global cell area          Local cell area
+                                  ------------------  ---------------------------- 
+Hierarchical cell                 Absolute   Percent  Combi-     Noncombi-  Black-
+                                  Total      Total    national   national   boxes   Design
+--------------------------------  ---------  -------  ---------  ---------  ------  ------------------------------------------
+qrc_decode                        4131.0181    100.0  3130.6681   959.3100  0.0000  qrc_decode
+clk_gate_decode_length_reg_reg       6.8400      0.2     1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_qrc_decode_mydesign_4
+clk_gate_mask_pattern_reg            6.8400      0.2     1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_qrc_decode_mydesign_1
+clk_gate_qrcode_start_reg            6.8400      0.2     1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_qrc_decode_mydesign_5
+clk_gate_rotation_cnt_reg            6.8400      0.2     1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_qrc_decode_mydesign_3
+clk_gate_rotation_type_reg           6.8400      0.2     1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_qrc_decode_mydesign_2
+clk_gate_start_pos_reg               6.8400      0.2     1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_qrc_decode_mydesign_0
+--------------------------------  ---------  -------  ---------  ---------  ------  ------------------------------------------
+Total                                                 3138.8761   992.1420  0.0000
+
+1

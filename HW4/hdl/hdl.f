@@ -1,0 +1,1 @@
+../hdl/qrc_decode.v

@@ -1,0 +1,59 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : qrc_decode
+Version: O-2018.06
+Date   : Wed Dec  2 15:50:50 2020
+****************************************
+
+Operating Conditions: PVT_1P08V_125C   Library: slow_vdd1v2
+Wire Load Model Mode: enclosed
+
+  Startpoint: rstn (input port clocked by clk)
+  Endpoint: clk_gate_mask_pattern_reg/latch
+            (negative level-sensitive latch clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  qrc_decode         Large                 slow_vdd1v2
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                 0.0000     0.0000
+  clock network delay (ideal)                           0.0000     0.0000
+  input external delay                                  2.0000     2.0000 r
+  rstn (in)                                             0.0102     2.0102 r
+  U1594/Y (BUFX3)                                       0.0869     2.0971 r
+  U2042/Y (OAI31XL)                                     0.0741     2.1712 f
+  clk_gate_mask_pattern_reg/EN (SNPS_CLOCK_GATE_HIGH_qrc_decode_mydesign_1)
+                                                        0.0000     2.1712 f
+  clk_gate_mask_pattern_reg/latch/D (TLATNXL)           0.0275     2.1987 f
+  data arrival time                                                2.1987
+
+  clock clk (fall edge)                                 1.2500     1.2500
+  clock network delay (ideal)                           0.0000     1.2500
+  clk_gate_mask_pattern_reg/latch/GN (TLATNXL)          0.0000     1.2500 f
+  time borrowed from endpoint                           0.9487     2.1987
+  data required time                                               2.1987
+  --------------------------------------------------------------------------
+  data required time                                               2.1987
+  data arrival time                                               -2.1987
+  --------------------------------------------------------------------------
+  slack (MET)                                                      0.0000
+
+  Time Borrowing Information
+  --------------------------------------------------------------
+  clk nominal pulse width                               1.2500   
+  library setup time                                   -0.0464   
+  --------------------------------------------------------------
+  max time borrow                                       1.2036   
+  actual time borrow                                    0.9487   
+  --------------------------------------------------------------
+
+
+1

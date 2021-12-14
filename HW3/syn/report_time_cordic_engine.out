@@ -1,0 +1,71 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : cordic_engine
+Version: O-2018.06
+Date   : Tue Nov 10 20:24:37 2020
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: PVT_1P08V_125C   Library: slow_vdd1v2
+Wire Load Model Mode: enclosed
+
+  Startpoint: z_in_reg_11__31_
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: y_in_reg_12__31_
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  cordic_engine      Large                 slow_vdd1v2
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                  0.0000     0.0000
+  clock network delay (ideal)            0.0000     0.0000
+  z_in_reg_11__31_/CK (DFFQX2)           0.0000 #   0.0000 r
+  z_in_reg_11__31_/Q (DFFQX2)            0.1219     0.1219 r
+  U365/Y (BUFX2)                         0.1009     0.2228 r
+  U5042/Y (XOR2XL)                       0.1215     0.3443 f
+  U5041/Y (NOR2XL)                       0.0601     0.4044 r
+  U5040/Y (NOR2XL)                       0.0569     0.4613 f
+  U6716/Y (AOI21XL)                      0.0725     0.5338 r
+  U6717/Y (OAI21XL)                      0.0920     0.6258 f
+  U6718/Y (AOI21XL)                      0.0947     0.7205 r
+  U1070/Y (NOR2BX1)                      0.0810     0.8014 f
+  U5045/Y (NOR2XL)                       0.0673     0.8688 r
+  U5663/Y (OAI21XL)                      0.1078     0.9766 f
+  U448/Y (OAI2BB1X1)                     0.0937     1.0703 f
+  U5811/Y (AOI21XL)                      0.0896     1.1600 r
+  U938/Y (OAI2BB1X1)                     0.1078     1.2677 r
+  U5816/Y (OAI21XL)                      0.0904     1.3582 f
+  U5046/Y (NAND2XL)                      0.0687     1.4268 r
+  U863/Y (OAI2BB1XL)                     0.0718     1.4986 f
+  U6729/Y (NOR2XL)                       0.0730     1.5716 r
+  U846/Y (NOR2BXL)                       0.0599     1.6314 f
+  U6730/Y (NOR2XL)                       0.0800     1.7115 r
+  U674/Y (OAI2BB1XL)                     0.0920     1.8035 r
+  U7221/Y (NAND2XL)                      0.0709     1.8744 f
+  U803/Y (XNOR2XL)                       0.1358     2.0102 r
+  y_in_reg_12__31_/D (DFFQXL)            0.0310     2.0412 r
+  data arrival time                                 2.0412
+
+  clock clk (rise edge)                  2.1000     2.1000
+  clock network delay (ideal)            0.0000     2.1000
+  y_in_reg_12__31_/CK (DFFQXL)           0.0000     2.1000 r
+  library setup time                    -0.0583     2.0417
+  data required time                                2.0417
+  -----------------------------------------------------------
+  data required time                                2.0417
+  data arrival time                                -2.0412
+  -----------------------------------------------------------
+  slack (MET)                                       0.0005
+
+
+1

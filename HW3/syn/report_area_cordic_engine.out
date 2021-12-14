@@ -1,0 +1,44 @@
+ 
+****************************************
+Report : area
+Design : cordic_engine
+Version: O-2018.06
+Date   : Tue Nov 10 20:24:37 2020
+****************************************
+
+Library(s) Used:
+
+    slow_vdd1v2 (File: /usr/cadtool/GPDK45/gsclib045_svt_v4.4/gsclib045/db/slow_vdd1v2_basicCells_wl.db)
+
+Number of ports:                          175
+Number of nets:                         11079
+Number of cells:                        10836
+Number of combinational cells:           9500
+Number of sequential cells:              1335
+Number of macros/black boxes:               0
+Number of buf/inv:                       1808
+Number of references:                      66
+
+Combinational area:              13977.198312
+Buf/Inv area:                     1296.180029
+Noncombinational area:            7522.290168
+Macro/Black Box area:                0.000000
+Net Interconnect area:               0.000000
+
+Total cell area:                 21499.488480
+Total area:                      21499.488480
+
+Hierarchical area distribution
+------------------------------
+
+                                  Global cell area            Local cell area
+                                  -------------------  ----------------------------- 
+Hierarchical cell                 Absolute    Percent  Combi-      Noncombi-  Black-
+                                  Total       Total    national    national   boxes   Design
+--------------------------------  ----------  -------  ----------  ---------  ------  ----------
+cordic_engine                     21499.4885    100.0  13366.0443  7522.2902  0.0000  cordic_engine
+controller                          611.1540      2.8    611.1540     0.0000  0.0000  controller
+--------------------------------  ----------  -------  ----------  ---------  ------  ----------
+Total                                                  13977.1983  7522.2902  0.0000
+
+1

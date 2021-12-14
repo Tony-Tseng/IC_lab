@@ -1,0 +1,11 @@
+106061101 曾泓硯
+RANK: A
+
+performance name: WASTED
+performance index: 10
+
+A: 4131
+T: 2.5
+C: 26828
+
+Pi: 2.77E+8

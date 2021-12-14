@@ -1,0 +1,1553 @@
+
+                           Design Compiler Graphical 
+                                 DC Ultra (TM)
+                                  DFTMAX (TM)
+                              Power Compiler (TM)
+                                 DesignWare (R)
+                                 DC Expert (TM)
+                               Design Vision (TM)
+                               HDL Compiler (TM)
+                               VHDL Compiler (TM)
+                                  DFT Compiler
+                               Design Compiler(R)
+
+                 Version O-2018.06 for linux64 - May 21, 2018 
+
+                    Copyright (c) 1988 - 2018 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+            or distribution of this software is strictly prohibited.
+Initializing...
+# set your TOPLEVEL here
+set TOPLEVEL "qrc_decode"
+qrc_decode
+# change your timing constraint here
+set TEST_CYCLE 2.5
+2.5
+source -echo -verbose 0_readfile.tcl 
+set TOP_DIR $TOPLEVEL
+qrc_decode
+set RPT_DIR report
+report
+set NET_DIR netlist
+netlist
+sh rm -rf ./$TOP_DIR
+sh rm -rf ./$RPT_DIR
+sh rm -rf ./$NET_DIR
+sh mkdir ./$TOP_DIR
+sh mkdir ./$RPT_DIR
+sh mkdir ./$NET_DIR
+# define a lib path here
+define_design_lib $TOPLEVEL -path ./$TOPLEVEL
+1
+# Read Design File (add your files here)
+set HDL_DIR "../hdl"
+../hdl
+# add your hdl files here
+analyze -library $TOPLEVEL -format verilog "../hdl/qrc_decode.v"
+Running PRESTO HDLC
+Compiling source file ../hdl/qrc_decode.v
+Presto compilation completed successfully.
+Loading db file '/usr/cadtool/GPDK45/gsclib045_svt_v4.4/gsclib045/db/slow_vdd1v2_basicCells_wl.db'
+Loading db file '/usr/cad/synopsys/synthesis/cur/libraries/syn/dw_foundation.sldb'
+1
+# elaborate your design
+elaborate $TOPLEVEL -architecture verilog -library $TOPLEVEL
+Loading db file '/usr/cad/synopsys/synthesis/cur/libraries/syn/gtech.db'
+Loading db file '/usr/cad/synopsys/synthesis/cur/libraries/syn/standard.sldb'
+  Loading link library 'slow_vdd1v2'
+  Loading link library 'gtech'
+Running PRESTO HDLC
+Warning:  ../hdl/qrc_decode.v:45: unsigned to signed assignment occurs. (VER-318)
+Warning:  ../hdl/qrc_decode.v:46: unsigned to signed assignment occurs. (VER-318)
+Warning:  ../hdl/qrc_decode.v:388: signed to unsigned conversion occurs. (VER-318)
+Warning:  ../hdl/qrc_decode.v:389: signed to unsigned conversion occurs. (VER-318)
+Warning:  ../hdl/qrc_decode.v:400: signed to unsigned conversion occurs. (VER-318)
+Warning:  ../hdl/qrc_decode.v:401: signed to unsigned conversion occurs. (VER-318)
+Warning:  ../hdl/qrc_decode.v:412: signed to unsigned conversion occurs. (VER-318)
+Warning:  ../hdl/qrc_decode.v:413: signed to unsigned conversion occurs. (VER-318)
+Warning:  ../hdl/qrc_decode.v:424: signed to unsigned conversion occurs. (VER-318)
+Warning:  ../hdl/qrc_decode.v:425: signed to unsigned conversion occurs. (VER-318)
+
+Statistics for case statements in always block at line 86 in file
+	'../hdl/qrc_decode.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            89            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 249 in file
+	'../hdl/qrc_decode.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           250            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 274 in file
+	'../hdl/qrc_decode.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           275            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 299 in file
+	'../hdl/qrc_decode.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           300            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 327 in file
+	'../hdl/qrc_decode.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           328            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 566 in file
+	'../hdl/qrc_decode.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           567            |    auto/auto     |
+|           569            |    auto/auto     |
+|           578            |    auto/auto     |
+|           587            |    auto/auto     |
+|           596            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 608 in file
+	'../hdl/qrc_decode.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           609            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 628 in file
+	'../hdl/qrc_decode.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           629            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 637 in file
+	'../hdl/qrc_decode.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           639            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine qrc_decode line 117 in file
+		'../hdl/qrc_decode.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    start_pos_reg    | Flip-flop |   8   |  Y  | N  | N  | N  | Y  | N  | N  |
+|    start_pos_reg    | Flip-flop |   2   |  Y  | N  | N  | N  | N  | Y  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine qrc_decode line 138 in file
+		'../hdl/qrc_decode.v'.
+===================================================================================
+|      Register Name      |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===================================================================================
+| position_block_line_reg | Flip-flop |  52   |  Y  | N  | N  | N  | N  | N  | N  |
+===================================================================================
+
+Inferred memory devices in process
+	in routine qrc_decode line 178 in file
+		'../hdl/qrc_decode.v'.
+===========================================================================
+|    Register Name    | Type  | Width | Bus | MB | AR | AS | SR | SS | ST |
+===========================================================================
+|      check_reg      | Latch |   3   |  Y  | N  | N  | N  | -  | -  | -  |
+===========================================================================
+
+Inferred memory devices in process
+	in routine qrc_decode line 187 in file
+		'../hdl/qrc_decode.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  qrcode_start_reg   | Flip-flop |  10   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine qrc_decode line 530 in file
+		'../hdl/qrc_decode.v'.
+====================================================================================
+|      Register Name       |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+====================================================================================
+|  decode_length_reg_reg   | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|    decode_length_reg     | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|  qrcode_start_whole_reg  | Flip-flop |  10   |  Y  | N  | N  | N  | N  | N  | N  |
+|      sram_raddr_reg      | Flip-flop |  10   |  Y  | N  | N  | N  | N  | N  | N  |
+|  qrc_decode_finish_reg   | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|  decode_jis8_valid_reg   | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|   decode_jis8_data_reg   | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|     position_cnt_reg     | Flip-flop |   7   |  Y  | N  | N  | N  | N  | N  | N  |
+|      store_cnt_reg       | Flip-flop |   7   |  Y  | N  | N  | N  | N  | N  | N  |
+|     rotation_cnt_reg     | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+|    rotation_type_reg     | Flip-flop |   4   |  Y  | N  | N  | N  | N  | N  | N  |
+|      decode_cnt_reg      | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+| qrc_decode_start_reg_reg | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|    sram_rdata_reg_reg    | Flip-flop |   4   |  Y  | N  | N  | N  | N  | N  | N  |
+====================================================================================
+
+Inferred memory devices in process
+	in routine qrc_decode line 547 in file
+		'../hdl/qrc_decode.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      state_reg      | Flip-flop |   5   |  Y  | N  | N  | N  | Y  | N  | N  |
+|  mask_pattern_reg   | Flip-flop |   8   |  Y  | N  | N  | N  | Y  | N  | N  |
+===============================================================================
+Statistics for MUX_OPs
+======================================================
+| block name/line  | Inputs | Outputs | # sel inputs |
+======================================================
+|  qrc_decode/229  |   4    |    1    |      2       |
+|  qrc_decode/229  |   8    |    8    |      3       |
+|  qrc_decode/229  |   8    |    1    |      3       |
+|  qrc_decode/252  |   8    |    5    |      3       |
+|  qrc_decode/253  |   8    |    5    |      3       |
+|  qrc_decode/256  |   8    |    5    |      3       |
+|  qrc_decode/257  |   8    |    5    |      3       |
+|  qrc_decode/260  |   8    |    5    |      3       |
+|  qrc_decode/261  |   8    |    5    |      3       |
+|  qrc_decode/264  |   8    |    5    |      3       |
+|  qrc_decode/265  |   8    |    5    |      3       |
+|  qrc_decode/268  |   8    |    5    |      3       |
+|  qrc_decode/269  |   8    |    5    |      3       |
+|  qrc_decode/277  |   8    |   10    |      3       |
+|  qrc_decode/503  |   8    |   208   |      3       |
+======================================================
+Information:  Complex logic will not be considered for set/reset inference. (ELAB-2008)
+Presto compilation completed successfully.
+Elaborated 1 design.
+Current design is now 'qrc_decode'.
+1
+# Solve Multiple Instance
+set uniquify_naming_style "%s_mydesign_%d"
+%s_mydesign_%d
+uniquify
+1
+# link the design
+current_design $TOPLEVEL
+Current design is 'qrc_decode'.
+{qrc_decode}
+link
+
+  Linking design 'qrc_decode'
+  Using the following designs and libraries:
+  --------------------------------------------------------------------------
+  qrc_decode                  /home/u106/u106061101/ICLAB/HW4/syn/qrc_decode.db
+  slow_vdd1v2 (library)       /usr/cadtool/GPDK45/gsclib045_svt_v4.4/gsclib045/db/slow_vdd1v2_basicCells_wl.db
+  dw_foundation.sldb (library) /usr/cad/synopsys/synthesis/cur/libraries/syn/dw_foundation.sldb
+
+1
+1
+source -echo -verbose 1_setting.tcl 
+# Setting Design and I/O Environment
+set_operating_conditions -library slow_vdd1v2 PVT_1P08V_125C
+Using operating conditions 'PVT_1P08V_125C' found in library 'slow_vdd1v2'.
+1
+# Assume outputs go to DFF and inputs also come from DFF
+set_driving_cell -library slow_vdd1v2 -lib_cell DFFHQX1 -pin {Q} [all_inputs]	
+1
+set_load [load_of "slow_vdd1v2/DFFHQX1/D"] [all_outputs]
+1
+# Setting wireload model
+set_wire_load_mode enclosed
+1
+set_wire_load_model -name "Large" $TOPLEVEL
+1
+# Setting Timing Constraints
+###  ceate your clock here
+create_clock -name clk -period $TEST_CYCLE  [get_ports clk]
+1
+###  set clock constrain
+set_ideal_network       [get_ports clk]
+1
+set_dont_touch_network  [all_clocks]
+1
+# I/O delay should depend on the real enironment. Here only shows an example of setting
+set_input_delay  [expr $TEST_CYCLE*0.8]  -clock clk [remove_from_collection [all_inputs] [get_ports clk]]
+1
+set_output_delay [expr $TEST_CYCLE*0.8]  -clock clk [all_outputs]
+1
+# Setting DRC Constraint
+# Defensive setting: default fanout_load 1.0 and our target max fanout # 20 => 1.0*20 = 20.0
+# max_transition and max_capacitance are given in the cell library
+set_max_fanout 20.0 $TOPLEVEL
+1
+# Area Constraint
+set_max_area   0
+1
+1
+source -echo -verbose 2_compile.tcl 
+# this cell's verilog will cause ncverilog to hang 
+# before synthesis settings
+set case_analysis_with_logic_constants true
+true
+set_fix_multiple_port_nets -feedthroughs -outputs -constants -buffer_constants
+1
+####check design####
+check_design > ./$RPT_DIR/check_design.log
+check_timing > ./$RPT_DIR/check_timing.log
+set_clock_gating_style -max_fanout 10
+
+Current clock gating style....
+Sequential cell: latch
+Minimum bank bitwidth: 3
+Minimum bank bitwidth for enhanced clock gating: 6
+Maximum fanout: 10
+Setup time for clock gate: 0.000000
+Hold time for clock gate: 0.000000
+Clock gating circuitry (positive edge): and
+Clock gating circuitry (negative edge): or
+ Note: inverter between clock gating circuitry 
+       and (negative edge) register clock pin.
+Control point insertion: none
+Control signal for control point: scan_enable
+Observation point insertion: false
+Observation logic depth: 5
+1
+# Synthesis all design (using : compile_ultra)
+# you can add "-gate_clock" to do gated-clock
+# you can add "-incremental" for higher performance
+compile_ultra -gate_clock -exact_map -no_autoungroup -no_seq_output_inversion -no_boundary_optimization
+Warning: The value of variable 'compile_preserve_subdesign_interfaces' has been changed to true because '-no_boundary_optimization' is used. (OPT-133)
+Information: Starting from 2013.12 release, constant propagation is enabled even when boundary optimization is disabled. (OPT-1318)
+Information: Performing power optimization. (PWR-850)
+Alib files are up-to-date.
+Information: Evaluating DesignWare library utilization. (UISN-27)
+
+============================================================================
+| DesignWare Building Block Library  |         Version         | Available |
+============================================================================
+| Basic DW Building Blocks           | O-2018.06-DWBB_201806.0 |     *     |
+| Licensed DW Building Blocks        | O-2018.06-DWBB_201806.0 |     *     |
+============================================================================
+
+
+Information: There are 190 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+  Simplifying Design 'qrc_decode'
+
+Loaded alib file './alib-52/slow_vdd1v2_basicCells_wl.db.alib'
+Information: State dependent leakage is now switched from on to off.
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'qrc_decode'
+Information: Added key list 'DesignWare' to design 'qrc_decode'. (DDB-72)
+Information: The register 'state_reg[4]' is a constant and will be removed. (OPT-1206)
+ Implement Synthetic for 'qrc_decode'.
+  Processing 'SNPS_CLOCK_GATE_HIGH_qrc_decode_mydesign_0'
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+Information: Timing loop detected. (OPT-150)
+	C5074/B C5074/Y U100/A U100/Y U101/A U101/Y 
+Information: Timing loop detected. (OPT-150)
+	U106/A U106/Y C5078/B C5078/Y U105/A U105/Y 
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C5074'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C5078'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C5070'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C5066'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C5062'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C5058'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C5054'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C5016'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4837'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4637'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4657'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4641'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4649'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4645'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4653'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4677'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4681'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4713'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4709'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4625'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4613'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4621'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4617'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4609'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4605'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4673'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4701'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4689'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4721'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4717'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4725'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4705'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4669'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4693'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4661'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4685'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4629'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4633'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4697'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4665'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4601'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4877'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4825'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4829'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4929'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4933'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4817'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4821'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4921'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4925'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4809'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4813'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4913'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4917'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4801'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4793'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4785'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4777'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4769'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4805'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4797'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4789'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4781'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4773'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4905'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4897'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4889'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4881'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4873'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4909'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4901'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4893'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4885'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4761'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4765'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4865'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4869'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4753'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4757'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4857'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4861'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4745'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4749'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4849'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4853'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4737'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4729'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4741'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4733'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4841'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4833'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4845'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C5022'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C5030'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C5046'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C5026'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C5034'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C5038'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C5042'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C5050'
+         to break a timing loop. (OPT-314)
+Information: The library cell 'TIELO' in the library 'slow_vdd1v2' is not characterized for internal power. (PWR-536)
+Information: The library cell 'TIEHI' in the library 'slow_vdd1v2' is not characterized for internal power. (PWR-536)
+Information: The target library(s) contains cell(s), other than black boxes, that are not characterized for internal power. (PWR-24)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_qrc_decode_mydesign_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design qrc_decode_RSOP_857, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design qrc_decode_RSOP_858, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design qrc_decode_RSOP_859, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design qrc_decode_RSOP_860, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design qrc_decode_RSOP_861, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design qrc_decode_DP_OP_862J1_122_9930_J1_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design qrc_decode_DW01_inc_J1_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design qrc_decode_DW01_inc_J1_1, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design qrc_decode_DW01_inc_J1_2, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design qrc_decode_DW01_inc_J1_3, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design qrc_decode_DP_OP_860J1_123_7552_J1_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design qrc_decode_DP_OP_862J1_130_8047_J1_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design qrc_decode_DP_OP_840J1_137_7433_J1_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design qrc_decode_DP_OP_888J1_142_1021_J1_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design qrc_decode_DP_OP_862J1_152_2433_J1_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_qrc_decode_mydesign_1, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_qrc_decode_mydesign_2, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_qrc_decode_mydesign_3, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_qrc_decode_mydesign_4, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_qrc_decode_mydesign_5, since there are no registers. (PWR-806)
+Information: Performing clock-gating on design qrc_decode. (PWR-730)
+Information: Timing loop detected. (OPT-150)
+	C5074/B C5074/Y U100/A U100/Y U101/A U101/Y 
+Information: Timing loop detected. (OPT-150)
+	U106/A U106/Y C5078/B C5078/Y U105/A U105/Y 
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C5074'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C5078'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C5070'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C5066'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C5062'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C5058'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C5054'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C5016'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4837'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4637'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4657'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4641'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4649'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4645'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4653'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4677'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4681'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4713'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4709'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4625'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4613'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4621'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4617'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4609'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4605'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4673'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4701'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4689'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4721'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4717'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4725'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4705'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4669'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4693'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4661'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4685'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4629'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4633'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4697'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4665'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4601'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4877'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4825'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4829'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4929'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4933'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4817'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4821'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4921'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4925'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4809'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4813'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4913'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4917'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4801'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4793'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4785'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4777'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4769'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4805'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4797'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4789'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4781'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4773'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4905'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4897'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4889'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4881'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4873'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4909'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4901'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4893'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4885'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4761'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4765'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4865'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4869'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4753'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4757'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4857'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4861'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4745'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4749'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4849'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4853'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4737'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4729'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4741'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4733'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4841'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4833'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4845'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C5022'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C5030'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C5046'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C5026'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C5034'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C5038'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C5042'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C5050'
+         to break a timing loop. (OPT-314)
+Information: The register 'rotation_type_reg[3]' is a constant and will be removed. (OPT-1206)
+
+  Beginning Mapping Optimizations  (Ultra High effort)
+  -------------------------------
+Information: Added key list 'DesignWare' to design 'qrc_decode_RSOP_861'. (DDB-72)
+  Mapping Optimization (Phase 1)
+
+  Beginning Constant Register Removal
+  -----------------------------------
+
+  Beginning Global Optimizations
+  ------------------------------
+  Numerical Synthesis (Phase 1)
+  Numerical Synthesis (Phase 2)
+  Global Optimization (Phase 1)
+  Global Optimization (Phase 2)
+  Global Optimization (Phase 3)
+  Global Optimization (Phase 4)
+  Global Optimization (Phase 5)
+  Global Optimization (Phase 6)
+  Global Optimization (Phase 7)
+  Global Optimization (Phase 8)
+  Global Optimization (Phase 9)
+  Global Optimization (Phase 10)
+  Global Optimization (Phase 11)
+  Global Optimization (Phase 12)
+  Global Optimization (Phase 13)
+  Global Optimization (Phase 14)
+  Global Optimization (Phase 15)
+  Global Optimization (Phase 16)
+  Global Optimization (Phase 17)
+  Global Optimization (Phase 18)
+  Global Optimization (Phase 19)
+  Global Optimization (Phase 20)
+  Global Optimization (Phase 21)
+  Global Optimization (Phase 22)
+  Global Optimization (Phase 23)
+  Global Optimization (Phase 24)
+  Global Optimization (Phase 25)
+  Global Optimization (Phase 26)
+  Global Optimization (Phase 27)
+  Global Optimization (Phase 28)
+  Global Optimization (Phase 29)
+  Global Optimization (Phase 30)
+  Global Optimization (Phase 31)
+  Mapping 'qrc_decode_DP_OP_888_155_1021_2'
+  Mapping 'qrc_decode_DP_OP_862_156_8047_2'
+
+  Beginning Isolate Ports
+  -----------------------
+
+  Beginning Delay Optimization
+  ----------------------------
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:00:19    4008.1      1.82      12.5       0.0                           114684.2969
+    0:00:24    4226.2      0.41       2.2       0.0                           123679.4609
+    0:00:24    4226.2      0.41       2.2       0.0                           123679.4609
+    0:00:24    4226.2      0.41       2.2       0.0                           123679.4609
+
+  Beginning WLM Backend Optimization
+  --------------------------------------
+    0:00:26    4121.8      0.37       1.7       0.0                           117407.3047
+    0:00:26    4122.1      0.37       1.7       0.0                           115039.7344
+    0:00:26    4122.1      0.37       1.7       0.0                           115039.7344
+    0:00:32    4240.2      0.13       0.4       0.2                           122124.2500
+    0:00:32    4240.2      0.13       0.4       0.2                           122124.2500
+    0:00:32    4239.5      0.13       0.4       0.2                           122100.7734
+    0:00:32    4239.5      0.13       0.4       0.2                           122100.7734
+    0:00:35    4266.2      0.11       0.3       0.2                           123715.1016
+    0:00:35    4266.2      0.11       0.3       0.2                           123715.1016
+    0:00:37    4273.7      0.09       0.3       0.2                           124087.3984
+    0:00:37    4273.7      0.09       0.3       0.2                           124087.3984
+    0:00:40    4318.5      0.08       0.2       0.2                           125992.3828
+    0:00:40    4318.5      0.08       0.2       0.2                           125992.3828
+    0:00:42    4325.3      0.04       0.1       0.1                           125880.5312
+    0:00:42    4325.3      0.04       0.1       0.1                           125880.5312
+    0:00:43    4325.3      0.04       0.1       0.1                           125880.5312
+    0:00:43    4325.3      0.04       0.1       0.1                           125880.5312
+    0:00:43    4325.3      0.04       0.1       0.1                           125880.5312
+    0:00:43    4325.3      0.04       0.1       0.1                           125880.5312
+    0:00:44    4325.3      0.04       0.1       0.1                           125880.5312
+
+
+  Beginning Design Rule Fixing  (max_transition)
+  ----------------------------
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:00:44    4325.3      0.04       0.1       0.1                           125880.5312
+  Global Optimization (Phase 32)
+  Global Optimization (Phase 33)
+  Global Optimization (Phase 34)
+    0:00:44    4327.7      0.00       0.0       0.0                           124131.6719
+    0:00:44    4327.7      0.00       0.0       0.0                           124131.6719
+
+
+  Beginning Leakage Power Optimization  (max_leakage_power 0)
+  ------------------------------------
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:00:44    4327.7      0.00       0.0       0.0                           124131.6719
+  Global Optimization (Phase 35)
+  Global Optimization (Phase 36)
+  Global Optimization (Phase 37)
+  Global Optimization (Phase 38)
+  Global Optimization (Phase 39)
+  Global Optimization (Phase 40)
+  Global Optimization (Phase 41)
+  Global Optimization (Phase 42)
+  Global Optimization (Phase 43)
+  Global Optimization (Phase 44)
+  Global Optimization (Phase 45)
+  Global Optimization (Phase 46)
+  Global Optimization (Phase 47)
+  Global Optimization (Phase 48)
+  Global Optimization (Phase 49)
+  Global Optimization (Phase 50)
+    0:00:46    4215.5      0.00       0.0       0.0                           107143.4688
+    0:00:46    4215.5      0.00       0.0       0.0                           107143.4688
+    0:00:46    4215.5      0.00       0.0       0.0                           107143.4688
+    0:00:46    4203.5      0.00       0.0       0.0                           107595.8750
+    0:00:46    4203.5      0.00       0.0       0.0                           107595.8750
+    0:00:46    4203.5      0.00       0.0       0.0                           107595.8750
+    0:00:46    4203.5      0.00       0.0       0.0                           107595.8750
+    0:00:46    4203.5      0.00       0.0       0.0                           107595.8750
+    0:00:46    4203.5      0.00       0.0       0.0                           107595.8750
+    0:00:46    4203.5      0.00       0.0       0.0                           107595.8750
+    0:00:46    4203.5      0.00       0.0       0.0                           107595.8750
+    0:00:46    4203.5      0.00       0.0       0.0                           107595.8750
+    0:00:46    4203.5      0.00       0.0       0.0                           107595.8750
+    0:00:46    4203.5      0.00       0.0       0.0                           107595.8750
+    0:00:46    4203.5      0.00       0.0       0.0                           107595.8750
+    0:00:46    4203.5      0.00       0.0       0.0                           107595.8750
+    0:00:46    4203.5      0.00       0.0       0.0                           107595.8750
+    0:00:46    4203.5      0.00       0.0       0.0                           107595.8750
+    0:00:46    4203.5      0.00       0.0       0.0                           107595.8750
+    0:00:46    4203.5      0.00       0.0       0.0                           107595.8750
+    0:00:46    4203.5      0.00       0.0       0.0                           107595.8750
+    0:00:46    4203.5      0.00       0.0       0.0                           107595.8750
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:00:46    4203.5      0.00       0.0       0.0                           107595.8750
+    0:00:46    4108.4      0.04       0.0       0.0                           110700.5859
+    0:00:47    4111.5      0.00       0.0       0.0                           110860.0625
+    0:00:47    4111.5      0.00       0.0       0.0                           110860.0625
+    0:00:47    4114.3      0.00       0.0       0.0                           110700.4531
+    0:00:47    4137.5      0.00       0.0       0.0                           109057.3750
+    0:00:48    4140.3      0.00       0.0       0.0                           109040.1406
+    0:00:48    4140.3      0.00       0.0       0.0                           109040.1406
+    0:00:48    4140.3      0.00       0.0       0.0                           109040.1406
+    0:00:48    4119.4      0.00       0.0       0.0                           109794.7500
+Loading db file '/usr/cadtool/GPDK45/gsclib045_svt_v4.4/gsclib045/db/slow_vdd1v2_basicCells_wl.db'
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+Information: State dependent leakage is now switched from off to on.
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+1
+compile_ultra -incremental -exact_map -no_autoungroup -no_seq_output_inversion -no_boundary_optimization
+Warning: The value of variable 'compile_preserve_subdesign_interfaces' has been changed to true because '-no_boundary_optimization' is used. (OPT-133)
+Information: Starting from 2013.12 release, constant propagation is enabled even when boundary optimization is disabled. (OPT-1318)
+Information: Performing power optimization. (PWR-850)
+Alib files are up-to-date.
+
+Loaded alib file './alib-52/slow_vdd1v2_basicCells_wl.db.alib'
+Information: State dependent leakage is now switched from on to off.
+
+  Beginning Pass 1 Mapping  (Incremental)
+  ------------------------
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+Information: Timing loop detected. (OPT-150)
+	C4837/B C4837/Y U2786/B0 U2786/Y U2787/B0 U2787/Y 
+Information: Timing loop detected. (OPT-150)
+	C4877/B C4877/Y U2779/B0 U2779/Y U2780/B0 U2780/Y 
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4837'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4877'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4825'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4829'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4929'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4933'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4817'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4821'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4921'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4925'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4809'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4813'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4913'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4917'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4801'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4793'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4785'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4777'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4769'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4805'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4797'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4789'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4781'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4773'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4905'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4897'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4889'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4881'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4873'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4909'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4901'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4893'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4885'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4761'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4765'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4865'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4869'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4753'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4757'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4857'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4861'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4745'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4749'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4849'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4853'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4737'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4729'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4741'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4733'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4841'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4833'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4845'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4665'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4717'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4701'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4669'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4633'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4689'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4721'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4705'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4697'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4653'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4645'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4649'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4657'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4709'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4713'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4681'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4677'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4685'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4673'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4641'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4637'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4601'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4605'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4609'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4617'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4621'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4613'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4625'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4725'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4661'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4693'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4629'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C5022'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C5030'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C5046'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C5026'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C5034'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C5038'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C5042'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C5050'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C5074'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C5070'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C5062'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C5054'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C5016'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C5058'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C5066'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C5078'
+         to break a timing loop. (OPT-314)
+Information: The library cell 'TIELO' in the library 'slow_vdd1v2' is not characterized for internal power. (PWR-536)
+Information: The library cell 'TIEHI' in the library 'slow_vdd1v2' is not characterized for internal power. (PWR-536)
+Information: The target library(s) contains cell(s), other than black boxes, that are not characterized for internal power. (PWR-24)
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:00:02    4119.4      0.00       0.0       0.0                           109794.7500
+    0:00:02    4119.4      0.00       0.0       0.0                           109794.7500
+
+  Beginning Mapping Optimizations  (Ultra High effort)  (Incremental)
+  -------------------------------
+
+  Beginning Incremental Implementation Selection
+  ----------------------------------------------
+    0:00:02    4118.4      0.03       0.0       0.0                           109772.9219
+    0:00:02    4118.4      0.03       0.0       0.0                           109772.9219
+    0:00:02    4118.4      0.03       0.0       0.0                           109772.9219
+    0:00:02    4118.4      0.03       0.0       0.0                           109772.9219
+  Global Optimization (Phase 51)
+  Global Optimization (Phase 52)
+  Global Optimization (Phase 53)
+  Global Optimization (Phase 54)
+  Global Optimization (Phase 55)
+  Global Optimization (Phase 56)
+
+
+
+  Beginning Delay Optimization Phase
+  ----------------------------------
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:00:02    4106.4      0.04       0.1       0.0                           109250.9922
+    0:00:02    4106.4      0.04       0.1       0.0                           109250.9922
+    0:00:02    4107.4      0.04       0.1       0.0                           109159.1328
+    0:00:03    4107.4      0.04       0.1       0.0                           109159.1328
+    0:00:03    4107.8      0.04       0.1       0.0                           109196.4297
+    0:00:03    4107.8      0.04       0.1       0.0                           109196.4297
+    0:00:04    4129.7      0.02       0.0       0.0                           110212.9453
+
+  Beginning Delay Optimization
+  ----------------------------
+    0:00:05    4129.7      0.02       0.0       0.0                           110212.9453
+    0:00:05    4129.7      0.02       0.0       0.0                           110212.9453
+    0:00:05    4129.7      0.02       0.0       0.0                           110212.9453
+    0:00:05    4129.7      0.02       0.0       0.0                           110212.9453
+    0:00:06    4129.7      0.02       0.0       0.0                           110212.9453
+    0:00:06    4129.7      0.02       0.0       0.0                           110212.9453
+    0:00:06    4129.7      0.02       0.0       0.0                           110212.9453
+    0:00:06    4121.1      0.02       0.0       0.0                           109854.8516
+    0:00:06    4121.1      0.02       0.0       0.0                           109854.8516
+    0:00:06    4121.1      0.02       0.0       0.0                           109854.8516
+    0:00:06    4121.1      0.02       0.0       0.0                           109854.8516
+    0:00:06    4121.1      0.02       0.0       0.0                           109854.8516
+    0:00:07    4121.1      0.02       0.0       0.0                           109854.8516
+    0:00:07    4121.1      0.02       0.0       0.0                           109854.8516
+    0:00:07    4121.1      0.02       0.0       0.0                           109854.8516
+    0:00:07    4121.1      0.02       0.0       0.0                           109854.8516
+    0:00:08    4127.9      0.00       0.0       0.0                           109888.5703
+
+
+  Beginning Leakage Power Optimization  (max_leakage_power 0)
+  ------------------------------------
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:00:08    4127.9      0.00       0.0       0.0                           109888.5703
+    0:00:08    4122.1      0.00       0.0       0.0                           109647.8203
+    0:00:08    4120.8      0.00       0.0       0.0                           109712.2031
+    0:00:08    4120.8      0.00       0.0       0.0                           109712.2031
+    0:00:08    4120.8      0.00       0.0       0.0                           109712.2031
+    0:00:08    4120.8      0.00       0.0       0.0                           109712.2031
+    0:00:08    4120.8      0.00       0.0       0.0                           109712.2031
+    0:00:08    4120.8      0.00       0.0       0.0                           109712.2031
+    0:00:08    4120.8      0.00       0.0       0.0                           109712.2031
+    0:00:08    4120.8      0.00       0.0       0.0                           109712.2031
+    0:00:08    4120.8      0.00       0.0       0.0                           109712.2031
+    0:00:08    4120.8      0.00       0.0       0.0                           109712.2031
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:00:08    4120.8      0.00       0.0       0.0                           109712.2031
+    0:00:09    4120.8      0.00       0.0       0.0                           109712.2031
+    0:00:09    4133.1      0.00       0.0       0.0                           108101.3438
+    0:00:09    4133.1      0.00       0.0       0.0                           108101.3438
+    0:00:10    4131.0      0.00       0.0       0.0                           108182.0625
+Loading db file '/usr/cadtool/GPDK45/gsclib045_svt_v4.4/gsclib045/db/slow_vdd1v2_basicCells_wl.db'
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+Information: State dependent leakage is now switched from off to on.
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+1
+# remove dummy ports
+remove_unconnected_ports [get_cells -hierarchical *]
+1
+remove_unconnected_ports [get_cells -hierarchical *] -blast_buses
+1
+1
+source -echo -verbose 3_report.tcl 
+###-----------------------------Naming Rules----------------------------
+set bus_inference_style {%s[%d]}
+%s[%d]
+set bus_naming_style {%s[%d]}
+%s[%d]
+set hdlout_internal_busses true
+true
+change_names -rules verilog -hierarchy
+1
+define_name_rules name_rule -allowed {a-z A-Z 0-9 _} -max_length 255 -type cell
+1
+define_name_rules name_rule -allowed {a-z A-Z 0-9 _[]} -max_length 255 -type net
+1
+define_name_rules name_rule -map {{"\\*cell\\*" "cell"}}
+1
+define_name_rules name_rule -case_insensitive
+1
+change_names -hierarchy -rules name_rule
+1
+###--------------------------Netlist-related------------------------------------
+write -format ddc     -hierarchy -output ./netlist/${TOPLEVEL}_syn.ddc
+Writing ddc file './netlist/qrc_decode_syn.ddc'.
+1
+write -format verilog -hierarchy -output ./netlist/${TOPLEVEL}_syn.v
+Writing verilog file '/home/u106/u106061101/ICLAB/HW4/syn/netlist/qrc_decode_syn.v'.
+1
+write_sdf -version 2.1 -significant_digits 4 -context verilog ./netlist/${TOPLEVEL}_syn.sdf
+Information: Annotated 'cell' delays are assumed to include load delay. (UID-282)
+Information: Writing timing information to file '/home/u106/u106061101/ICLAB/HW4/syn/netlist/qrc_decode_syn.sdf'. (WT-3)
+Information: Updating design information... (UID-85)
+Information: Timing loop detected. (OPT-150)
+	C4837/B C4837/Y U2786/B0 U2786/Y U2787/B0 U2787/Y 
+Information: Timing loop detected. (OPT-150)
+	C4877/B C4877/Y U2779/B0 U2779/Y U2780/B0 U2780/Y 
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4837'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4877'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4825'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4829'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4929'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4933'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4817'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4821'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4921'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4925'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4809'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4813'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4913'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4917'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4801'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4793'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4785'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4777'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4769'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4805'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4797'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4789'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4781'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4773'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4905'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4897'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4889'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4881'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4873'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4909'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4901'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4893'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4885'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4761'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4765'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4865'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4869'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4753'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4757'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4857'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4861'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4745'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4749'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4849'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4853'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4737'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4729'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4741'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4733'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4841'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4833'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4845'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4665'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4717'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4701'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4669'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4633'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4689'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4721'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4705'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4697'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4653'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4645'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4649'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4657'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4709'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4713'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4681'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4677'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4685'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4673'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4641'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4637'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4601'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4605'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4609'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4617'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4621'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4613'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4625'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4725'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4661'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4693'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C4629'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C5022'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C5030'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C5046'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C5026'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C5034'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C5038'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C5042'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C5050'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C5074'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C5070'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C5062'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C5054'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C5016'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C5058'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C5066'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'C5078'
+         to break a timing loop. (OPT-314)
+1
+write_sdc ./netlist/${TOPLEVEL}_syn.sdc
+1
+write_saif -output ./netlist/${TOPLEVEL}_syn.saif 
+Information: Writing backward SAIF information to file './netlist/qrc_decode_syn.saif'. (PWR-458)
+1
+###---------------------------Syntheis result reports----------------------------
+# ===== Timing report =====
+report_timing -delay min -max_paths 4 > ./report/report_hold_${TOPLEVEL}.out
+report_timing -delay max -max_paths 4 > ./report/report_setup_${TOPLEVEL}.out
+report_timing -path full -delay max -max_paths 1 -nworst 1 -significant_digits 4 > ./report/report_time_${TOPLEVEL}.out
+# ===== Area report =====
+report_area -hier  > ./report/report_area_${TOPLEVEL}.out
+# ===== Power report =====
+report_power -hier > ./report/report_power_${TOPLEVEL}.out
+# ===== violations =====
+report_constraint -all_violators > ./report/report_violation_${TOPLEVEL}.out
+exit
+
+Thank you...

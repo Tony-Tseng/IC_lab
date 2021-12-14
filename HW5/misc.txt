@@ -1,0 +1,11 @@
+106061101 曾泓硯
+RANK: A
+
+performance name: PI monkey
+performance index: 13
+
+A: 7142
+T: 2.294
+C: 20071
+
+Pi: 3.288E+8

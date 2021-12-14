@@ -1,0 +1,9 @@
+106061101 曾泓硯
+Rank : A
+performance index: 28
+Name: __BASELINE__
+
+Performance: 168.3E+6
+A: 22110
+T: 2.1
+C: 3624
